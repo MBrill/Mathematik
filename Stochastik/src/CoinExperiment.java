@@ -2,8 +2,9 @@ import java.util.Random;
 import org.apache.commons.math3.random.RandomDataGenerator;
 
 /**
- * Aufgabe 1.5
  * Münzwurf mit java.util.Random und Ausgabe der Statistik
+ * 
+ * Aufgabe 1.5
  */
 public class CoinExperiment {
 	public static void main(String[] args) {

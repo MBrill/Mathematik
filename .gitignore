@@ -3,6 +3,8 @@
 *.jar
 *.war
 *.ear
+*.prefs
+
 /bin/
 /lib/
 /Stochastik/bin/
