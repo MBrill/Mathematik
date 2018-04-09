@@ -25,11 +25,13 @@ public class CircleIntersection {
 		
 		System.out.println("Das Ergebnis unseres Monte-Carlo Experiments");	
 		System.out.println("--------------------------------------------");
-		System.out.println("Die Schätzung für unsere Flache: " + hK);
+		System.out.println("Die Schätzung für unsere Fläche: " + hK);
 	
 	}
 	
-	/** Entscheidung, ob ein Punkt im Schnitt der beiden Kreise liegt */
+	/** 
+	 * Entscheidung, ob ein Punkt im Schnitt der beiden Kreise liegt 
+	 */
 	private static boolean inArea(double x, double y)
 	{
 		// Daten über die Kreise
