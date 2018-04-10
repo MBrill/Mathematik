@@ -31,16 +31,15 @@ public class CircleIntersection {
 	
 	/** 
 	 * Entscheidung, ob ein Punkt im Schnitt der beiden Kreise liegt 
+	 * @param x x-Koordinate des Punkts
+	 * @param y y-Koordinate des Punkts
+	 * @return true, falls Punkt im Durchschnitt der beiden Kreise liegt
 	 */
 	private static boolean inArea(double x, double y)
 	{
 		// Daten über die Kreise
-		double radius = 0.5;
-		double radius2 =  radius* radius;
-		double xm1 = 0.0;
-		double ym1 = 0.5;
-		double xm2 = 0.5;
-		double ym2 = 0.5;		
+		double radius2 = radius* radius;
+
 		
 		boolean res1 = false, res2 = false;
 		// Punkt im ersten Kreis?
@@ -49,4 +48,25 @@ public class CircleIntersection {
 		if ( (x-xm2)*(x-xm2) + (y - ym2)*(y - ym2) <= radius2 ) res2 = true;
 		return (res1 && res2);
 	}
+	
+	/**
+	 * x-Koordinate des Mittelpunkts von Kreis 1
+	 */
+	private static double xm1 = 0.0;
+	/**
+	 * y-Koordinate des Mittelpunkts von Kreis 1
+	 */	
+	private static double ym1 = 0.5;
+	/**
+	 * x-Koordinate des Mittelpunkts von Kreis 2
+	 */	
+	private static double xm2 = 0.5;
+	/**
+	 * y-Koordinate des Mittelpunkts von Kreis 2
+	 */	
+	private static double ym2 = 0.5;
+	/**
+	 * Radius von Kreis 1 und Kreis 2
+	 */
+	private static double radius = 0.5;
 }
