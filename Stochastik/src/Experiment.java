@@ -5,8 +5,8 @@
  * LinearCongruentalGenerator, und einmal mit einer Instanz eines MersenneTwisters
  * aus der Apache Common Math API.
  */
-public class Experiment {
-
+public class Experiment 
+{
 	public static void main(String[] args) {
 		TwoDiesCongruental experiment1 = new TwoDiesCongruental();
 		TwoDiesTwister     experiment2 = new TwoDiesTwister();
@@ -20,21 +20,16 @@ public class Experiment {
 		int[] ergebnis = new int[11];
 		// Wie oft möchten wir würfeln?
 		final int n=100000;
-		// Variable für das aktuelle Ergebnis
+		// Variable für Berechnungen
 		int value, i, summe;
 		
+		System.out.println("Wir simulieren " + n + " Würfe mit Hilfe des Lehner-Generators!");
 		// 1. Würfeln mit dem linearen Kongruenz-Generator
 		for (i=0; i<n; i++) {
 			value = experiment1.throwDies();
 			ergebnis[value-2]++;
 		}
-		
-		// Die Ergebnisse ausgeben
-		/*for (i=0; i<11; i++) {
-			value = i+2;
-			System.out.println("Augensumme = " + value + " : " + ergebnis[i]);
-		}*/
-		
+			
 		// Check, ob die Ergebnisse plausibel sind
 		// Die Summe der Häufigkeiten muss mit der Variable n,
 		// der Anzahl der Durchführungen,übereinstimmen.
@@ -42,23 +37,23 @@ public class Experiment {
 		for (i=0; i<11; i++)
 			summe += ergebnis[i];
 		
-		if (summe != n)
+		if (summe != n) {
+			System.out.println("Inkonsistentes Ergebnis bei der Simulation mit dem Lehmer-Generator!");
 			System.out.println("Die Summe der Häufigkeiten stimmt nicht mit n überein!");
-		
+		}
+			
 		// Die Ergebnisse ausgeben
 		System.out.println("Ergebnisse mit dem linearen Kongruenz-Generator");
-		System.out.println("-----------------------------------------------");
-		System.out.println("Ausgabe der Häufigkeiten als Liste");
-		for (i=0; i<11; i++) {
-			System.out.print(ergebnis[i] + ";");
-		}
+		System.out.println("-----------------------------------");		
+		printResults(ergebnis);
+		System.out.println("\n");
 		
 		// Experiment wiederholen, jetzt mit einem MersenneTwister
 		
-		// HÃ¤ufigkeiten zurücksetzen
+		// Häufigkeiten zurücksetzen
 		for (i=0; i<11; i++) 
 			ergebnis[i] = 0;
-		
+		System.out.println("Wir simulieren " + n + " Würfe mit Hilfe eines Mersenne-Twisters!");
 		for (i=0; i<n; i++) {
 			value = experiment2.throwDies();
 			ergebnis[value-2]++;
@@ -71,16 +66,32 @@ public class Experiment {
 		for (i=0; i<11; i++)
 			summe += ergebnis[i];
 		
-		if (summe != n)
+		if (summe != n) {
+			System.out.println("Inkonsistentes Ergebnis bei der Simulation mit dem  Mersenne-Twister!");
 			System.out.println("Die Summe der Häufigkeiten stimmt nicht mit n überein!");
-		
-		
-		// Die Ergebnisse ausgeben
-		System.out.println("\n\nErgebnisse mit dem Mersenne Twister");
-		System.out.println("-----------------------------------");
-		System.out.println("Ausgabe der Häufigkeiten als Liste");
-		for (i=0; i<11; i++) {
-			System.out.print(ergebnis[i] + ";");
 		}
+				
+		// Die Ergebnisse ausgeben
+		System.out.println("Ergebnisse mit dem Mersenne Twister");
+		System.out.println("-----------------------------------");
+		printResults(ergebnis);
 	}
+	
+	/**
+	 * Ausgabe der absoluten Häufigkeiten als csv-Liste, mit Trenner Semikolon.
+	 * 
+	 * Es gibt 11 mögliche Ergebnisse, von der Summe 2 bis zur maximalen Summe 12.
+	 * 
+	 * @param ergebnis Absolute Häufigkeiten als int-Array der Länge 11
+	 */
+	private static void printResults(int[] ergebnis) 
+	{
+		System.out.println("Ausgabe der absoluten Häufigkeiten als csv, Semikolon ist der Trenner.");
+		
+		for (int i=0; i<10; i++) {
+			System.out.print(ergebnis[i] + ";");
+		// Letzte Häufigkeit ohne Semikolon
+		System.out.print(ergebnis[10]);
+	}
+}
 }

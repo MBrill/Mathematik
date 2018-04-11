@@ -1,64 +1,86 @@
-import java.util.Random;
-import org.apache.commons.math3.random.RandomDataGenerator;
-
 /**
- * Münzwurf mit java.util.Random und Ausgabe der Statistik
+ * Experiment Münzwurf.
  * 
- * Aufgabe 1.5
+ * Das Experiment wird zweimal ausgeführt. Einmal mit einer Instanz von
+ * Math.Random, und einmal mit einer Instanz eines MersenneTwisters
+ * aus der Apache Common Math API.
  */
-public class CoinExperiment {
+public class CoinExperiment 
+{
 	public static void main(String[] args) {
-		int i;
-        // Zufallszahlen-Generator instanziieren
-		Random generator = new java.util.Random();
+
+        ThrowCoinRandom  experiment1 = new ThrowCoinRandom();
+        ThrowCoinTwister experiment2 = new ThrowCoinTwister();
+        
+		int i, ergebnis;
+		// Wir oft wollen wir jeweils eine Münze werfen?
+		final int n=100000;
 		
-		// Daten für das Experiment
-		final int N=100;
-		int countWappen = 0, 
-			countZahl = 0;
-		
-		for (i=0; i<N; i++) {
-			boolean result = generator.nextBoolean();
-			if (result) {
-				System.out.println("Wappen");
-				countWappen++;
-			}
-			else {
-				System.out.println("Zahl");
-				countZahl++;
-			}
-		}
+		System.out.println("Wir simulieren Münzwürfe mit Math.Random!");
+		for (i=0; i<n; i++) 
+			counter(experiment1.throwCoin());
 		
 		// Statistik ausgeben
-		System.out.println("Ergebnisse für java.util.Random");
-		System.out.println("Es wurde " + countWappen + " Wappen geworfen!");
-		System.out.println("Es wurde " + countZahl + " Zahl geworfen!");
-		System.out.println("Relative Häufigkeiten");
-		System.out.println("Die relative Häufigkeit für Wappen ist " + (float)(countWappen)/N);
-		System.out.println("Die relative Häufigkeit für Zahl ist " + (float)(countZahl)/N);
+		System.out.println("\n");		
+		System.out.println("Ergebnisse für Math.Random");
+		System.out.println("-----------------------------------");
+		printResults(n);
+
+		// Counter zurücksetzen für das zweite Experiment
+		countWappen=0;
+		countZahl=0;
 		
-		RandomDataGenerator generatorApache= new RandomDataGenerator();		
-		// Mit WELL-Generator
-		countWappen = 0;
-		countZahl   = 0;
-		for (i=0; i<N; i++) {
-			int result = generatorApache.nextBinomial(1, 0.5);
-			if (result==0) {
-				System.out.println("Wappen");
-				countWappen++;
-			}
-			else {
-				System.out.println("Zahl");
-				countZahl++;
-			}
-		}
+		System.out.println("\n");
+		System.out.println("Wir simulieren Münzwürfe mit dem Mersenne-Twister!");
+		for (i=0; i<n; i++) 
+			counter(experiment2.throwCoin());
+		
 		// Statistik ausgeben
-		System.out.println("Ergebnisse für commons.math.RandomGenerator");
-		System.out.println("Es wurde " + countWappen + " Wappen geworfen!");
-		System.out.println("Es wurde " + countZahl + " Zahl geworfen!");
-		System.out.println("Relative Häufigkeiten");
-		System.out.println("Die relative Häufigkeit für Wappen ist " + (float)(countWappen)/N);
-		System.out.println("Die relative Häufigkeit für Zahl ist " + (float)(countZahl)/N);		
+		System.out.println("\n");
+		System.out.println("Ergebnisse für den Mersenne-Twister");
+		System.out.println("-----------------------------------");
+		printResults(n);
+	}
+
+	/** Variable für die absolute Häufigkeit für Wappen */
+	private static int countWappen=0;
+	/** Variable für die absolute Häufigkeit für Wappen */	
+	private static int countZahl=0;
+	
+	/**
+	 * Erfassen der Ergebnisse auf zwei Variablen
+	 * 
+	 * Die Funktion zählt die beiden Counter hoch. Es wird
+	 * *nicht* überprüft, ob ergebnis nicht 0 ode 1 ist!
+	 * Alle Eingaben ungleich 0 werden als Zahl interpretiert!
+	 * 
+	 * @param ergebnis Wappen (=0) oder Zahl (=1)?
+	 */
+	private static void counter(int ergebnis)
+	{
+		if (ergebnis==0)
+			countWappen++;
+		else
+			countZahl++;
+	}
+	
+	/**
+	 * Ausgabe der absoluten Häufigkeiten als csv-Liste, mit Trenner Semikolon.
+	 * 
+	 * Die erste ausgegebene absolute Häufigkeit ist die Anzahl der Wappen, die zweite die Anzahl für Zahl.
+	 * 
+	 * @param n Anzahl der Experimente für die Berechnung der relativen Häufigkeiten
+	 */
+	private static void printResults(int n) 
+	{	
+		System.out.println("Es wurden " + n + " Simulationen durchgeführt!");
+		System.out.println("Ausgabe der absoluten Häufigkeiten Wappen/Zahl als csv, Semikolon ist der Trenner.");
+		System.out.println(countWappen + ";" + countZahl);
+		System.out.println("Ausgabe der relativen Häufigkeiten Wappen/Zahl als csv, Semikolon ist der Trenner.");
+		System.out.println((double)countWappen/n + ";" + (double)countZahl/n);
+		System.out.println("Abweichungen Wappen/Zahl von der theoretischen relativen Häufigkeit 0.5 als csv, Semikolon ist der Trenner.");
+		System.out.println(Math.abs((double)countWappen/n-0.5) + ";" + Math.abs((double)countZahl/n-0.5));		
+		
 	}
 
 }
