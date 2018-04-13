@@ -40,11 +40,7 @@ public class MCPiMeans extends MCPiAbstract
 			summe += p[i];
 		}
 		summe /= (double)n;
-		//summehK /= n;
 		
-		//System.out.println("Das arithmetische Mittel der relativen Häufigketen " + (double)summehK/(double)n);		
-		System.out.println("Die Näherung mit Hilfe der Mittelwertsregel " + summe);
-
         printResults(summehK/(double)n, summe);
 	}
 }
