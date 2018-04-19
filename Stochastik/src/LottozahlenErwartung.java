@@ -4,8 +4,6 @@ import org.apache.commons.math3.random.Well44497a;
 /**
  * Simulation von 1000 Lotto-Ziehungen und zählen, wie häufig eine Zahl, beispielsweise 42,
  * gezogen wird.
- * 
-  * Aufgabe 1.7
  */
 public class LottozahlenErwartung {
 

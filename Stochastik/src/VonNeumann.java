@@ -1,5 +1,5 @@
 /**
- * Realisierung der Mid-Square Methode von John von Neumann fÃ¼r zweistellige Dezimalzahlen
+ * Realisierung der Mid-Square Methode von John von Neumann für zweistellige Dezimalzahlen
  */
 public class VonNeumann {
 	/** 
@@ -13,6 +13,8 @@ public class VonNeumann {
 	
 	/**
 	 * Konstruktor mit Startwert
+	 * 
+	 * @param seed Startwert für die Generierung der Zufallszahlen
 	 */
 	public VonNeumann(int seed) 
 	{
@@ -35,6 +37,8 @@ public class VonNeumann {
 	
 	/**
 	 * Startwert neu setzen
+	 * 
+	 * @param seed Startwert für die Generierung der Zufallszahlen	 * 
 	 */
 	public void setSeed(int seed) {
 		x = seed;
@@ -42,6 +46,7 @@ public class VonNeumann {
 	
 	/**
 	 * Berechnen einer weiteren Zahl
+	 * 
 	 * @return Die private Variable x enthält eine weitere "Zufallszahl"
 	 */
 	private void compute() {
@@ -54,6 +59,8 @@ public class VonNeumann {
 		x = t/10;	
 	}
 	
-	/** Variable mit der aktuellen Zahl */
+	/** 
+	 * Variable mit der aktuellen Zahl 
+	 */
     private int x;
 }

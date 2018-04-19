@@ -7,8 +7,6 @@
  *  <P>einen Multiplikator a</P>
  *  <P>ein Inkrement c, und</P> 
  *  <P>einen Startwert ("seed") x_0</P>  
- *  
- *  Lösung der Aufgabe 1.4.
  */
 public class LinearCongruentalGenerator {
 

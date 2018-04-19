@@ -12,7 +12,7 @@ public class CoinExperiment
         ThrowCoinRandom  experiment1 = new ThrowCoinRandom();
         ThrowCoinTwister experiment2 = new ThrowCoinTwister();
         
-		int i, ergebnis;
+		int i;
 		// Wir oft wollen wir jeweils eine Münze werfen?
 		final int n=100000;
 		

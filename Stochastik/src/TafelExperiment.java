@@ -1,7 +1,5 @@
 /**
  * Simulation des Tafel-Experiments
- * 
- * Aufgabe 3.1
  */
 public class TafelExperiment {
 
@@ -74,6 +72,6 @@ public class TafelExperiment {
 	/**
 	 * Daten für die Fläche A
 	 */
-	private static double   xmin=0.5, xmax=1.5, 
-		                                    ymin=0.5, ymax=1.0;
+	private static double xmin=0.5, xmax=1.5, 
+		                    ymin=0.5, ymax=1.0;
 }

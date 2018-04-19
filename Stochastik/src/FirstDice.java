@@ -1,7 +1,7 @@
 /**
  * Erzeugen von zufälligen Werten eines Würfels mit java.util.Random.nextInt(int n)
  */
-public class firstDice {
+public class FirstDice {
 
 	public static void main(String[] args) {
 		int n = 6, val;
@@ -11,7 +11,7 @@ public class firstDice {
 		// Random erzeugen und danach nur noch diese Instanz verwenden
 		java.util.Random generator = new java.util.Random();
 		
-		// 10 zufÃ¤llige WÃ¼rfelergebnisse ...
+		// 10 zufällige Würfelergebnisse ...
 		System.out.println("Wir erzeugen 10 zufällige Würfelergebnisse!");
 		for (int i=0; i<10; i++) {
 			val = generator.nextInt(n)+1;

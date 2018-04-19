@@ -31,6 +31,7 @@ public class CircleIntersection {
 	
 	/** 
 	 * Entscheidung, ob ein Punkt im Schnitt der beiden Kreise liegt 
+	 * 
 	 * @param x x-Koordinate des Punkts
 	 * @param y y-Koordinate des Punkts
 	 * @return true, falls Punkt im Durchschnitt der beiden Kreise liegt

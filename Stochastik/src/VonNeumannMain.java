@@ -2,17 +2,16 @@
  * Hauptprogramm für die Untersuchung der Mid-Square Methode
  * Diese Methode selbst ist in der Klasse VonNeumann implementiert.
  */
-public class VonNeumannMain {
-    // Hauptprogramm
+public class VonNeumannMain 
+{
 	public static void main(String[] args) {
 		int i,  value, counter, seed;
-		// Variable für die ZyklenlÃ¤nge für jeden Startwert
+		// Variable für die Zyklenlänge für jeden Startwert
 		int[] cycles = new int[100];
 		// Variable für den Stopwert, um zu untersuchen, mit welchem Wert die Folge stoppt.
 		int[] stopValue = new int[100];
 
-		// Matrix ü¼r die Ausgabe der einzelnen Folgen
-		// Feld war zu Beginn 100x100.
+		// Matrix für die Ausgabe der einzelnen Folgen
 		// Der längste Zyklus ist durch 15 Zahlen gegeben ...
 		int[][] sequences = new int[100][15];
 		// Implementierung der Mid-Square Methode für zweistellige Dezimalzahlen
@@ -23,6 +22,7 @@ public class VonNeumannMain {
 		for (i=0; i<100; i++)
 			hash[i] = false;
 		
+		// Jetzt führen wir das Experiment durch
 		for (seed=0; seed<100; seed++) {
             // Alle Startwerte durchlaufen
 			mid.setSeed(seed);
@@ -60,7 +60,7 @@ public class VonNeumannMain {
 		
 		// Die absoluten Häufigkeiten bestimmen, mit denen die einzelnen Stopwerte auftreten
 		// Variable, mit der wir die Häufigkeiten für diese Stopwerte
-		// Es gibt die folgenden ö¶glichkeiten, an denen ein Zyklus stoppt:
+		// Es gibt die folgenden Möglichkeiten, an denen ein Zyklus stoppt:
 		// 0, 0
 		// 10, 10
 		// 50, 50
@@ -96,7 +96,7 @@ public class VonNeumannMain {
 		System.out.println("60, 60 wurde " + stopFrequency[3] + "-mal erreicht");
 		System.out.println("24, 57, 24 wurde " + stopFrequency[4] + "-mal erreicht");
 		
-		// Ausgabe alle Zyklen Ergebnisse, falls Variable all true gesetzt wird
+		// Ausgabe alle Zyklen Ergebnisse, falls Variable all auf true gesetzt wird
 		boolean all = false;
 	
 		if (all) {

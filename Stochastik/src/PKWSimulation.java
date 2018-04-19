@@ -1,6 +1,5 @@
 /**
  * Simulation der exponential-verteilten PKW-Werkstatt
- * Aufgabe 1.6
  */
 
 import org.apache.commons.math3.random.RandomDataGenerator;
