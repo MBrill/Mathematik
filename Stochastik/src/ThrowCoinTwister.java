@@ -1,5 +1,4 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
-//import org.apache.commons.math3.random.MersenneTwister;
 
 /**
  * Realisierung des Zufallsexperiments "Werfen einer fairen Münze"
