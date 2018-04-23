@@ -8,9 +8,9 @@ public class ThrowCoinRandom extends ThrowCoinAbstract {
 	/** 
 	 * Konstruktor 
 	 */
-	public ThrowCoinRandom() 
+	public ThrowCoinRandom(Random gen) 
 	{	
-		generator = new java.util.Random();;
+		generator = gen;
 	}
 	
 	/** 

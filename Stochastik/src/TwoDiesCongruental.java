@@ -2,13 +2,13 @@
  * Realisierung des Zufallsexperiments zweimal würfeln und Augensumme
  * mit unserem eigenen linearen Kongruenz-Generator.
  */
-public class TwoDiesCongruental extends TwoDiesAbstract {	
+public class TwoDiesCongruental extends TwoDiesAbstract 
+{	
 	/** 
 	 * Konstruktor 
 	 */
-	public TwoDiesCongruental() {	
-		// Eine Instanz des Generators erzeugen
-		// Der Generator verwendet die originalDaten von Lehmer!
+	public TwoDiesCongruental(LinearCongruentalGenerator gen) 
+	{	
 		generator = new LinearCongruentalGenerator();
 	}
 	

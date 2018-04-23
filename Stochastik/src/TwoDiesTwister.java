@@ -1,5 +1,4 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
-import org.apache.commons.math3.random.MersenneTwister;
 
 /**
  * Realisierung des Zufallsexperiments "zweimal würfeln und Augensumme bilden"
@@ -9,11 +8,9 @@ public class TwoDiesTwister extends TwoDiesAbstract {
 	/** 
 	 * Konstruktor 
 	 */
-	public TwoDiesTwister() {	
-		// Mersenne Twister erzeugen
-		MersenneTwister twister = new MersenneTwister();
+	public TwoDiesTwister(RandomDataGenerator gen) {	
 		// Zufallszahlen-Generator erzeugen mit MersenneTwister-Instanz
-		generator = new RandomDataGenerator(twister);
+		generator = gen;
 	}
 	
 	/** 

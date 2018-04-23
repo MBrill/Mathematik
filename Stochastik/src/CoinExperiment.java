@@ -1,3 +1,7 @@
+import org.apache.commons.math3.random.RandomDataGenerator;
+import org.apache.commons.math3.random.MersenneTwister;
+
+
 /**
  * Experiment Münzwurf.
  * 
@@ -7,10 +11,18 @@
  */
 public class CoinExperiment 
 {
-	public static void main(String[] args) {
-
-        ThrowCoinRandom  experiment1 = new ThrowCoinRandom();
-        ThrowCoinTwister experiment2 = new ThrowCoinTwister();
+	public static void main(String[] args) 
+	{
+		// Zufallsgeneratoren erzeugen
+		// Mersenne Twister erzeugen
+		MersenneTwister twister = new MersenneTwister();
+		// Zufallszahlen-Generator erzeugen mit MersenneTwister-Instanz
+		RandomDataGenerator genTwist= new RandomDataGenerator(twister);
+		// Instanz von Random
+		java.util.Random genRand = new java.util.Random();
+		
+        ThrowCoinRandom  experiment1 = new ThrowCoinRandom(genRand);
+        ThrowCoinTwister experiment2 = new ThrowCoinTwister(genTwist);
         
 		int i;
 		// Wir oft wollen wir jeweils eine Münze werfen?

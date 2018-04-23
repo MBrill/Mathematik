@@ -1,3 +1,6 @@
+import org.apache.commons.math3.random.RandomDataGenerator;
+import org.apache.commons.math3.random.MersenneTwister;
+
 /**
  * Experiment zweimal würfeln und Augensumme berechnen.
  * 
@@ -8,8 +11,15 @@
 public class Experiment 
 {
 	public static void main(String[] args) {
-		TwoDiesCongruental experiment1 = new TwoDiesCongruental();
-		TwoDiesTwister     experiment2 = new TwoDiesTwister();
+		// Mersenne Twister erzeugen
+		MersenneTwister twister = new MersenneTwister();
+		// Zufallszahlen-Generator erzeugen mit MersenneTwister-Instanz
+		RandomDataGenerator genTwist= new RandomDataGenerator(twister);
+		// Der Kongruenz-Generator verwendet die originalDaten von Lehmer!
+		LinearCongruentalGenerator genLin = new LinearCongruentalGenerator();
+		
+		TwoDiesCongruental experiment1 = new TwoDiesCongruental(genLin);
+		TwoDiesTwister     experiment2 = new TwoDiesTwister(genTwist);
 		
 		/* Wir speichern die absoluten Häufigkeiten in einem int-Feld
 		 * Dabei ist die Augensumme 2 in ergebnis[0],

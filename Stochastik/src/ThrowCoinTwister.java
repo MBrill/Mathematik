@@ -1,5 +1,5 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
-import org.apache.commons.math3.random.MersenneTwister;
+//import org.apache.commons.math3.random.MersenneTwister;
 
 /**
  * Realisierung des Zufallsexperiments "Werfen einer fairen Münze"
@@ -9,12 +9,10 @@ public class ThrowCoinTwister extends ThrowCoinAbstract {
 	/** 
 	 * Konstruktor 
 	 */
-	public ThrowCoinTwister() 
+	public ThrowCoinTwister(RandomDataGenerator gen) 
 	{	
-		// Mersenne Twister erzeugen
-		MersenneTwister twister = new MersenneTwister();
-		// Zufallszahlen-Generator erzeugen mit MersenneTwister-Instanz
-		generator = new RandomDataGenerator(twister);
+		// Zufallszahlen-Generator
+		generator = gen;
 	}
 	
 	/** 
