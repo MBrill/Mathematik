@@ -1,0 +1,6 @@
+{
+   "startwert" : 1.0,
+   "radikand"  : 3.0,
+   "epsilon"   : 0.0000005
+   "maxIter"   : 10
+}

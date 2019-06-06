@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Konfiguration für Log4j2
+     $Author: brill $
+     $Revision: #2 $
+     $File: //depot/Java/MatheGrundlagen/src/log4j2.xml $
+     $Date: 2014/08/06 $
+     -->
+<Configuration status="WARN">
+<Appenders>
+     <Console name="Console" target="SYSTEM_ERR">
+       <PatternLayout>
+         <Pattern>%d{HH:mm} %-5level %logger{36} - %msg%n</Pattern>
+       </PatternLayout>
+    </Console>
+    <!-- Default für einen FileAppender ist append="true" -->
+    <File name="myFile" fileName="logs/factors.log"
+                        append="false">
+      <PatternLayout>
+         <Pattern>%d{HH:mm} %-5level %logger{36} - %msg%n</Pattern>
+      </PatternLayout>
+     </File>
+     <Async name="Async">
+       <AppenderRef ref="myFile"/>
+    </Async>
+</Appenders>
+<Loggers>
+	<!-- Konfiguration für den Logger in der Klasse ComputeFactors -->
+    <Logger name="numbers.factorsLogging.ComputeFactors" level="INFO" />
+ 	<!-- Konfiguration für den Logger in der Klasse ComputeFactors, Version optimize1 -->
+    <Logger name="numbers.factorsOptimize1.ComputeFactors" level="INFO" />      
+ 	<!-- Konfiguration für den Logger in der Klasse ComputeFactors, Version optimize2 -->
+    <Logger name="numbers.factorsOptimize2.ComputeFactors" level="INFO" /> 
+      	
+    <!-- Konfiguration für die restlichen Logger -->
+	<!-- Durch ersetzen des AppenderRef kann die Ausgabe
+	     auf die Konsole umgelenkt werden! -->
+    <Root level="ERROR">
+      <AppenderRef ref="Async"/>
+    </Root>
+</Loggers>
+</Configuration>

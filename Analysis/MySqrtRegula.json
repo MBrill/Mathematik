@@ -1,0 +1,6 @@
+{
+  "radikand" : 2.0,
+  "epsilon1" : 0.000005,
+  "epsilon2" : 0.000005, 
+  "maxIter"  : 100
+}   
