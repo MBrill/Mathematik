@@ -4,83 +4,124 @@ import org.apache.commons.math3.random.RandomDataGenerator;
  * Zweidimensionale Brown'sche Molekularbewegung.
  * 
  * "Der Betrunkene in Manhattan"
+ * 
+ * @author Manfred Brill
+ * @version Wintersemester 2019/20
  */
 public class RandomWalk2D {
 	
 	/**
 	 * Konstruktor.
 	 * 
-	 * @param Zufallszahlengenerator
+	 * <p>Falls der Zielpunkt nicht zulÃ¤ssig ist wird
+	 * stattdessen der Punkt (xSz, ySz) verwendet!
+	 * 
+	 * @param gen Zufallszahlengenerator
 	 * @param xS x-Koordinate des Startpunkts
 	 * @param yS y-Koordinate des Startpunkts
-	 * @param xSz Ausdehung in x-Richtung
-	 * @param ySz Ausdehung in y-Richtung
-	 * @apram xH x-Koordinate des Zielpunkts
+	 * @param xSz Ausdehnung in x-Richtung
+	 * @param ySz Ausdehnung in y-Richtung
+	 * @param xH x-Koordinate des Zielpunkts
 	 * @param yH y-Koordinate des Zielpunkts
 	 * @param max Maximale Anzahl der Schritte
 	 */
 	public RandomWalk2D(RandomDataGenerator gen,
-			int xS, int yS, int xSz, int ySz, int xH, int yH, int max)
+			            int xS, int yS, int xSz, int ySz, 
+			            int xH, int yH, int max)
 	{
 		generator = gen;
-		xHome = xH;
-		yHome = yH;
-		xStart = 0;
-		yStart = 0;
+		if (inRegion(xH, yH))
+		{
+			xHome = xH;
+			yHome = yH;
+		}
+		else
+		{
+			System.err.println("Startpunkt umgesetzt!");
+			xHome = xSz;
+			yHome = ySz;
+		}
+		xPosition = xS;
+		yPosition = yS;
 		maxSteps=max;
 	}
 	
 	/**
 	 * Konstruktor.
 	 * 
-	 * @param Zufallszahlengenerator
-	 * @apram xH x-Koordinate des Zielpunkts
+	 * <p>Falls der Zielpunkt nicht zulÃ¤ssig ist wird
+	 * stattdessen der Punkt (xSize, ySize) verwendet!
+	 * 
+	 * @param gen Zufallszahlengenerator
+	 * @param xH x-Koordinate des Zielpunkts
 	 * @param yH y-Koordinate des Zielpunkts
 	 * @param max Maximale Anzahl der Schritte
 	 */
 	public RandomWalk2D(RandomDataGenerator gen,
-			int xH, int yH, int max)
+			            int xH, int yH, int max)
 	{
 		generator = gen;
-		xHome = xH;
-		yHome = yH;
-		xStart = 0;
-		yStart = 0;
+		if (inRegion(xH, yH))
+		{
+			xHome = xH;
+			yHome = yH;
+		}
+		else
+		{
+			System.err.println("Startpunkt umgesetzt!");
+			xHome = xSize;
+			yHome = ySize;
+		}
+		xPosition = xStart;
+		yPosition = yStart;		
 		maxSteps=max;
 	}
 	
 	/**
 	 * Konstruktor.
 	 * 
-	 * @param Zufallszahlengenerator
-	 * @param xS x-Koordinate des Startpunkts
-	 * @param yS y-Koordinate des Startpunkts
-	 * @apram xH x-Koordinate des Zielpunkts
+	 * <p>Falls der Zielpunkt nicht zulÃ¤ssig ist wird
+	 * stattdessen der Punkt (xSz, ySz) verwendet!
+	 * 
+	 * @param gen Zufallszahlengenerator
+	 * @param xSz Ausdehnung in x-Richtung
+	 * @param ySz Ausdehnung in y-Richtung
+	 * @param xH x-Koordinate des Zielpunkts
 	 * @param yH y-Koordinate des Zielpunkts
 	 * @param max Maximale Anzahl der Schritte
 	 */
 	public RandomWalk2D(RandomDataGenerator gen,
-			int xS, int yS, int xH, int yH, int max)
+			            int xSz, int ySz, int xH, int yH, int max)
 	{
 		generator = gen;
-		xSize = xS;
-		ySize = yS;
-		xHome = xH;
-		yHome = yH;
-		xStart = 0;
-		yStart = 0;
+		xSize = xSz;
+		ySize = ySz;
+		if (inRegion(xH, yH))
+		{
+			xHome = xH;
+			yHome = yH;
+		}
+		else
+		{
+			System.err.println("Startpunkt umgesetzt!");
+			xHome = xSz;
+			yHome = ySz;
+		}
+		xPosition = xStart;
+		yPosition = yStart;		
 		maxSteps=max;
 	}
 
 	/**
-	 * Die Simulation durchführen.
+	 * Die Simulation durchfÃ¼hren.
 	 * 
 	 * Wir haben mehrere Abbruchkriterien.
 	 * Einmal, ob wir unser Ziel erreicht haben.
-	 * Und dann noch die beiden Abbrüche, wenn wir den Bereich verlassen
+	 * Und dann noch die beiden AbbrÃ¼che, wenn wir den Bereich verlassen
 	 * oder wenn wir die maximale Anzahl der Iterationen erreicht haben.
 	 * 
-	 * Nur wenn das Ziel erreicht ist geben wir reached = TRUE zurück .....
+	 * @return true Das Ziel wurde erreicht
+	 *         false Ziel wurde nicht erreicht, die Suche wurde abgebrochen.
 	 */
 	public boolean walk()
 	{
@@ -88,7 +129,17 @@ public class RandomWalk2D {
 		numberOfSteps = 0;
 		do {
 			makeAStep();
-			success = stop || atHome();
+			numberOfSteps++;
+			if (atHome())
+			{
+				success=true;
+				break;
+			}
+			if (numberOfSteps > maxSteps)
+			{
+				success=false;
+				break;
+			}
 		} while( !stop );
 		
 		return success;
@@ -112,15 +163,23 @@ public class RandomWalk2D {
 	public int getYPosition()
 	{
 		return yPosition;
-	}
-	
+	}	
 	/**
-	 * Überprüfung, ob die aktuelle Position mit dem  Ziel übereinstimmt.
+	 * ÃœberprÃ¼fung, ob die aktuelle Position mit dem Ziel Ã¼bereinstimmt.
 	 * 
 	 * @return true falls wir das Ziel erreicht haben
 	 *        false sonst.
 	 */
-	public boolean atHome()
+	/**
+	 * Anzahl der durchgefÃ¼hrten Schritte.
+	 * 
+	 * @return Anzahl
+	 */
+	public int getNumberOfSteps()
+	{
+		return numberOfSteps;
+	}
+	private boolean atHome()
 	{
 		if ( (xPosition==xHome) && (yPosition==yHome) )
 			return true;
@@ -128,13 +187,13 @@ public class RandomWalk2D {
 			return false;
 	}
 	/**
-	 * Einen Schritt durchführen.
+	 * Einen Schritt durchfÃ¼hren.
 	 * 
-	 * Jede der vier Richtungen ist gleich wahrscheinlich. Die
-	 * Entscheidung, welche Richtung verwendet wird ist eine zufällige
-	 * Entscheidung, die mit Hilfe eines Mersenne Twisters gefällt wird.
+	 * <p>Jede der vier Richtungen ist gleich wahrscheinlich. Die
+	 * Entscheidung, welche Richtung verwendet wird ist eine zufÃ¤llige
+	 * Entscheidung, die mit Hilfe eines Mersenne Twisters gefÃ¤llt wird.
 	 */
-	public void makeAStep()
+	private void makeAStep()
 	{
 		int step = 0;
 		step = generator.nextInt(1, 4);
@@ -142,32 +201,44 @@ public class RandomWalk2D {
 		// in eine der vier Richtungen.
 		switch (step) {
         case 1: 
-            xPosition++;
+            xPosition+= stepSize;
             if (xPosition > xSize)
             	stop = true;
             break;
         case 2:
-        	yPosition++;
+        	yPosition+= stepSize;
             if (yPosition > ySize)
             	stop = true;
         	break;
         case 3:
-        	xPosition--;
+        	xPosition-= stepSize;
             if (xPosition < -xSize)
             	stop = true;
         	break;
         case 4:
-        	yPosition--;
+        	yPosition-= stepSize;
             if (yPosition < -ySize)
             	stop = true;
             break; 
         default:
+        	System.err.println("Bei der Bestimmung der Richtung ist ein unerwarteter Fehler aufgetreten!");
         	break;
 		}
-		
-		numberOfSteps++;
 	}
-	
+	/**
+	 * ÃœberprÃ¼fen, ob eine Position innerhalb des Bereichs liegt.
+	 * 
+	 * @return true Position ist ok		
+	 */
+	private boolean inRegion(int x, int y)
+	{
+		boolean ok = true;
+		if ( (x < -xSize) || (x > xSize))
+			ok = false;
+		if ( (y < -ySize) || (y > ySize))
+			ok = false;
+		return ok;
+	}
 	/**
 	 * Ausdehnung des Bereichs in x-Richtung.
 	 * 
@@ -183,7 +254,7 @@ public class RandomWalk2D {
 	/**
 	 * Die x-Koordinate des Startpunkts.
 	 */	
-	private static int xStart = 0;
+	private int xStart = 0;
 	/**
 	 * Die y-Koordinate des Startpunkts
 	 */	
@@ -207,38 +278,37 @@ public class RandomWalk2D {
 	/**
 	 * Maximale Anzahl von Schritten.
 	 * 
-	 * Wird diese Anzahl von Schritten größer als eine vorgegebene
+	 * <p>Wird diese Anzahl von Schritten grÃ¶ÃŸer als eine vorgegebene
 	 * Schranke, dann beenden wir unsere Iteration.
 	 */
 	private int maxSteps = 100;
 	/**
 	 * Anzahl der Iterationen.
 	 * 
-	 * Auf dieser Variablen finden wir die Anzahl der durchgeführten
+	 * <p>Auf dieser Variablen finden wir die Anzahl der durchgefÃ¼hrten
 	 * Bewegungen.
 	 */
 	private int numberOfSteps = 0;
 	/**
 	 * Schrittweite.
 	 * 
-	 * Die Schrittweite ist immer 1. Diese Variable könnten wir später
-	 * auch mit einem Zufallszahlengenerator verändern.
+	 * <p>Die Schrittweite ist immer 1. Diese Variable kÃ¶nnten wir spÃ¤ter
+	 * auch mit einem Zufallszahlengenerator verÃ¤ndern.
 	 */
 	private int stepSize = 1;
 	/**
-	 * Abbruch
+	 * Wir verlassen den Bereich oder haben zu lange gesucht.
 	 * 
-	 * Ist diese Variable true, dann beenden wir die Simulation. Das kann einmal 
-	 * bedeuten, dass wir die gesuchte Heimatposition erreicht haben,
-	 * dass wir den Bereich verlassen haben oder dass die maximale Anzahl der Schritte
-	 * erreicht wurde.
+	 * <p>Ist diese Variable true, dann beenden wir die Simulation. 
+	 * Wir haben den Bereich verlassen oder die maximale Anzahl der Schritte
+	 * wurde erreicht.
 	 */
 	private boolean stop = false;
 	/** 
 	 * Instanz des Zufallszahlen-Generators.
 	 * 
-	 * Der Zufallszahlengenerator wird im Hauptprogram erzeugt und
-	 * den Konstruktoren übergeben.
+	 * <p>Der Zufallszahlengenerator wird im Hauptprogram erzeugt und
+	 * den Konstruktoren Ã¼bergeben.
 	 */
 	private RandomDataGenerator generator;	
 	 

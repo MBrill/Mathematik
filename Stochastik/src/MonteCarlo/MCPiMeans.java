@@ -1,7 +1,7 @@
 /**
  * Monte-Carlo Methode zur Bestimmung von pi
  * 
- * Wir führen das Experiment mit k-Punkten durch,
+ * Wir fÃ¼hren das Experiment mit k-Punkten durch,
  * machen das insgesamt n-mal und bilden den Mittelwert.
  */
 public class MCPiMeans extends MCPiAbstract 
@@ -13,10 +13,10 @@ public class MCPiMeans extends MCPiAbstract
 		int k = 10000, n = 10000;
 		double hK;
 		
-		System.out.println("Annäherung an pi mit Hilfe einer Monte-Carlo Simulation");		
+		System.out.println("AnnÃ¤herung an pi mit Hilfe einer Monte-Carlo Simulation");		
 		System.out.println("Wir beginnnen mit der Simulation!");
 		System.out.println("Wir werfen jeweils " + k + "-mal!");
-		System.out.println("Wir führen insgesamt " + n + "-mal dieses Experiment durch und berechnen das arithmetische Mittel");
+		System.out.println("Wir fÃ¼hren insgesamt " + n + "-mal dieses Experiment durch und berechnen das arithmetische Mittel");
 		System.out.println("Sobald die Simulation beendet ist erfolgt wieder eine Ausgabe auf der Konsole!");
 		System.out.println("Bitte etwas Geduld!");
 		
@@ -31,7 +31,7 @@ public class MCPiMeans extends MCPiAbstract
 			p[i] = 4.0*hK;
 		}
 
-		// Wir bilden die arithmetische Mittel der relativen Häufigkeiten und der Schätzungen
+		// Wir bilden die arithmetische Mittel der relativen HÃ¤ufigkeiten und der SchÃ¤tzungen
 		int summehK = 0;
 		double summe = 0.0;
 		for (i=0; i<n; i++)

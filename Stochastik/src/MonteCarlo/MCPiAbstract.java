@@ -1,17 +1,17 @@
 /**
- * Basisklasse für Monte-Carlo Methoden zur Bestimmung von pi
+ * Basisklasse fÃ¼r Monte-Carlo Methoden zur Bestimmung von pi
  */
 abstract public class MCPiAbstract 
 {
 	public MCPiAbstract() {}
 	
 	/**
-	 * Durchführung des Monte-Carlo Experiments
+	 * DurchfÃ¼hrung des Monte-Carlo Experiments
 	 * 
 	 * @param generator Instanz eines Zufallszahlengenerators
 	 * @param k Anzahl der Punkte, die im Einheitsquadrat erzeugt werden sollen
 	 * 
-	 * @return Relative Häufigkeit der Treffer im Einheitskreis
+	 * @return Relative HÃ¤ufigkeit der Treffer im Einheitskreis
 	 */
 	protected static int experiment(java.util.Random generator, int k)
 	{
@@ -29,8 +29,8 @@ abstract public class MCPiAbstract
 	/** 
 	 * Entscheidung, ob ein Punkt im  Einheitskreis liegt 
 	 * 
-	 * @param x x-Koordinate des Punkts, der überprüft wird
-     * @param y y-Koordinate des Punkts, der überprüft wird	 
+	 * @param x x-Koordinate des Punkts, der Ã¼berprÃ¼ft wird
+     * @param y y-Koordinate des Punkts, der Ã¼berprÃ¼ft wird	 
      * 
      * @return true, falls der Punkt im Einheitskreis liegt
 	 */
@@ -43,8 +43,8 @@ abstract public class MCPiAbstract
 	/**
 	 * Ausgabe der Ergebnisse auf der Konsole
 	 * 
-	 * @param hK Relative Häufigkeit der Treffer im Einheitskreis
-	 * @param p  Berechnete Näherung für pi als double-Zahl
+	 * @param hK Relative HÃ¤ufigkeit der Treffer im Einheitskreis
+	 * @param p  Berechnete NÃ¤herung fÃ¼r pi als double-Zahl
 	 */
     public static void printResults(double hK, double p) 
     {
@@ -52,9 +52,9 @@ abstract public class MCPiAbstract
     	
 		System.out.println("\nDas Ergebnis unseres Monte-Carlo Experiments");	
 		System.out.println("--------------------------------------------");
-		System.out.println("Die relative Häufigkeit der Treffer im Einheitskreis: " + hK);
-		System.out.println("Unsere Schätzung für pi: " + p);
-		System.out.println("Der absolute Fehler zwischen Pi und unserer Schätzung: " + delta);
+		System.out.println("Die relative HÃ¤ufigkeit der Treffer im Einheitskreis: " + hK);
+		System.out.println("Unsere SchÃ¼tzung fÃ¼r pi: " + p);
+		System.out.println("Der absolute Fehler zwischen Pi und unserer SchÃ¤tzung: " + delta);
     }
     
 	/** Radius */
