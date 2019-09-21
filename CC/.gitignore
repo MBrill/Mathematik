@@ -1,0 +1,4 @@
+# gitignore fuer C und C++
+
+# CMake out-of-source builds
+**/[Bb]uild/

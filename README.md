@@ -6,4 +6,6 @@ Die Quellen in Java sind nach den Lehrveranstaltungen Analysis, Stochastik und M
 
 Die neuen Entwicklungen werden, beginnend mit den Beispielen zur Computerorientierten Mathematik im Master, in Python 3 implementiert.
 
-Es gibt auch Quellen in R, die ab sofort auch aus Develop/R in dieses Repo gezogen werden, wenn es Sinn macht.
+Es gibt Quellen in R, die ab sofort auch aus Develop/R in dieses Repo gezogen werden, wenn es Sinn macht.
+
+unterhalb von CC liegen C und C++-Quellen zur Mathematik, teilweise zum Hanser-Buch, teilweise zu Numerik und Mathematik-Vorlesungen.
