@@ -8,4 +8,4 @@ Die neuen Entwicklungen werden, beginnend mit den Beispielen zur Computerorienti
 
 Es gibt Quellen in R, die ab sofort auch aus Develop/R in dieses Repo gezogen werden, wenn es Sinn macht.
 
-unterhalb von CC liegen C und C++-Quellen zur Mathematik, teilweise zum Hanser-Buch, teilweise zu Numerik und Mathematik-Vorlesungen.
+Unterhalb von CC liegen C und C++-Quellen zur Mathematik, teilweise zum Hanser-Buch, teilweise zu Numerik und Mathematik-Vorlesungen.
