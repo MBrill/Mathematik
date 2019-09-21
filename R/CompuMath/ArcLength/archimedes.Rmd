@@ -1,0 +1,136 @@
+---
+title: "Beispiel für die Annäherung der Bogenlänge einer Kurve"
+author: "Manfred Brill"
+date: "Oktober 2018"
+output: html_document
+---
+
+# Ausgangssituation 
+Wir betrachten die Bogenlänge und die Approximation davon auf dem Rechner. Das gelingt durch eine Polygonzug, der
+an n Punkten mit der Kurve übereinstimmt. Wir berechnen
+die Länge dieses Polygonzuges und erhalten damit eine Näherung der gesuchten Bogenlänge.
+
+```{r setup, include=FALSE, warnings=FALSE, echo=FALSE, message=FALSE, results='hide'}
+library(tidyverse)
+library(knitr)
+library(RColorBrewer)
+myPalette <- brewer.pal(8, "Accent")
+options(digits=8)
+```
+
+## Einheitskreis
+Als erstes Beispiel betrachten wir den Einheitskreis. Den Umfang und damit auch die Bogenlänge kennen wir, er ist durch 2 pi = `r 2 * pi` gegeben.
+
+Bereits in der Analysis haben wir eine Folge betrachtet, die auf Archimedes zurückgeht und mit der man pi annähern kann. Davon betrachten wir jetzt nur einen Teil, eingeschriebene n-Ecke.
+
+Wir beginnen mit einem Sechs-Eck und verdoppeln sukzessive immer weiter die Anzahl der Ecken. Dann kann man den Umfang der n-Ecke, also die Näherung für die Bogenlänge, mit Hilfe
+einer Formel berechnen. Mehr dazu findet man in den Lösungen zu den Analyis-Aufgaben; es gibt
+auch ein Java-Projekt für die Berechnungen.
+
+Für das Sechseck erhalten wir die Näherung 6. Für 12 Ecke erhalten wir die Näherung
+6.438 .... Für  n=12, ein 96-Eck, sind schon drei Nachkommastellen korrekt. 
+
+### Berechnungen und Ergebnisse
+```{r archimedes, include=TRUE, warnings=TRUE, echo=TRUE, message=TRUE}
+n <- seq(1,10);
+powersN <- 2^n;
+argN <- (pi/3)/powersN;
+Ln <- 6*powersN*sin(argN);
+relError <- abs(Ln-2*pi)/(2*pi)
+```
+Damit erhalten wir die ersten 10 Näherungen für die Bogenlänge; zusätzlich
+geben wir die relativen Fehler zu 2 pi an:
+
+```{r archimedesResults, include=TRUE, warnings=TRUE, echo=TRUE, message=TRUE}
+tabValues <- tibble(n,Ln, relError)
+colnames(tabValues) <- c("n", "Approximation", "Relativer Feher")
+
+kable(tabValues)
+```
+
+## Parabel
+Als ein weiteres Beispiel betrachten wir die Parabel mit der Parameterdarstellung (t, t^2) auf dem Parameterintervall [0, 1]. Dafür erhalten wir schon ein Integral, das nur noch
+mit sehr großer Mühe, mit einer Substitution, in geschlossener Form, zu berechnen ist.
+Das exakte Ergebnis muss ich noch raussuchen. Aber wir können natürlich wieder
+die Anzahl der Punkte verdoppeln in jeder Iteration und die Länge des Polygonzugs berechnen.
+
+Wir erzeugen im ersten Schritt eine Datenstruktur für den Polygonzug, den wir
+für die Annäherung verwenden und eine Repräsentation der Parameterkurve als Funktion.
+
+```{r parabelFun, include=TRUE, warnings=TRUE, echo=TRUE, message=TRUE}
+# Wir erzeugen ein tibble, dann können wir auf die Koordinatenzugreifen
+parabel <- function(t) {
+   point <- tibble(t, t^2)
+   colnames(point) <- c("x", "y")
+   return(point)
+}
+
+# Parameterwerte
+tValues <- seq(0.0, 1.0, by=1.0/10.0)
+
+polygonzug <- parabel(tValues)
+colnames(polygonzug) <- c("x", "y")
+kable(polygonzug)
+
+polyLength <- function(poly) {
+  
+   compu <- poly %>%
+     mutate(dx = lag(x)) %>%
+     mutate(dy=lag(y)) %>%  
+     select(x, y, dx, dy)
+
+   compu <- compu %>%
+     filter(!is.na(dx))
+
+  compu <- compu %>%
+     mutate(diffX = (x-dx)^2, diffY = (y-dy)^2) %>%
+     mutate(dist = sqrt(diffX + diffY))
+  
+  return(sum(compu$dist))
+}
+
+polyLength(polygonzug)
+```
+
+Jetzt machen wir das, bevor wir aufräumen, für den Kreis, denn da wissen wir am besten, was das Resultat ist.
+
+```{r kreisTest, include=TRUE, warnings=TRUE, echo=TRUE, message=TRUE}
+circle <- function(t) {
+   point <- tibble(cos(2*pi*t), sin(2*pi*t))
+   colnames(point) <- c("x", "y")
+   return(point)
+}
+
+# Parameterwerte
+n <- 10
+tValues <- seq(0.0, 1.0, 1.0/n)
+
+poly <- circle(tValues)
+colnames(poly) <- c("x", "y")
+```
+
+Die Bogenlänge des Kreises, berechnet mit `r n` Punkten und Auflösung `r 1.0/n`, ist durch die Approximation
+mit Hilfe eines Polygonzugs gegeben durch `r polyLength(poly)`. Der Fehler, den
+wir hier machen ist `r abs(polyLength(poly) - 2*pi)/(2*pi)`.
+
+## Die semikubische Parabel:
+```{r semikubisch, include=TRUE, warnings=TRUE, echo=TRUE, message=TRUE}
+semicubic <- function(t) {
+   point <- tibble(t^2, t^3)
+   colnames(point) <- c("x", "y")
+   return(point)
+}
+
+# Parameterwerte
+n <- 50
+tValues <- seq(0.0, 1.0, 1.0/n)
+
+poly <- semicubic(tValues)
+colnames(poly) <- c("x", "y")
+```
+
+Die Bogenlänge der semikubischen Parabel im Parameterintervall [0, 1], berechnet mit `r n` Punkten  und Auflösung `r 1.0/n`, ist durch die Approximation
+mit Hilfe eines Polygonzugs gegeben durch `r polyLength(poly)`.
+
+-----
+&#40;c)  Hochschule Kaiserslautern, Fachbereich Informatik und Mikrosystemtechnik, Prof. Dr. Manfred Brill
