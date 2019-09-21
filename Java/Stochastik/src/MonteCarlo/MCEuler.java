@@ -2,17 +2,17 @@ import org.apache.commons.math3.random.RandomDataGenerator;
 import org.apache.commons.math3.random.Well44497a;
 
 /**
- * Monte-Carlo Simulation für die Bestimmung der Euler'schen Zahl
+ * Monte-Carlo Simulation fÃ¼r die Bestimmung der Euler'schen Zahl
  * 
- * <p>Wir führen das Rencontre-Problem mit einer Anzahl n von
- * Karten durch und zählen in einer Anzahl von Durchläufen, wie
- * häufig die Bank gewinnt - wie häufig also ein Rencontre stattfindet.
+ * <p>Wir fÃ¼hren das Rencontre-Problem mit einer Anzahl n von
+ * Karten durch und zï¿½hlen in einer Anzahl von Durchlï¿½ufen, wie
+ * hÃ¤ufig die Bank gewinnt - wie hÃ¤ufig also ein Rencontre stattfindet.
  * 
- * <p>Man weiß, dass die Wahrscheinlichkeit f_n für ein Rencontre für
+ * <p>Man weiÃŸ, dass die Wahrscheinlichkeit f_n fÃ¼r ein Rencontre fÃ¼r
  * n gegen Unendlich gegen 1 - 1/e konvergiert. Wir verwenden unsere berechneten
- * relativen Häufigkeiten als Näherung für f_n und lösen die dadurch
+ * relativen HÃ¤ufigkeiten als NÃ¤herung fï¿½r f_n und lÃ¶sen die dadurch
  * entstehende Gleichung nach e auf. Dann erhalten wir eine Monte-Carlo
- * Näherung für die Euler'sche Zahl als
+ * Nï¿½herung fÃ¼r die Euler'sche Zahl als
  *      e = 1/(1-f_n).
  */
 public class MCEuler {
@@ -23,7 +23,7 @@ public class MCEuler {
 		// Eine Instanz von RandomDataGenerator mit der Well-Klasse erzeugen
 		RandomDataGenerator generator = new RandomDataGenerator(well);
 		
-		System.out.println("Monte-Carlo Simulation für die Euler'sche Zahl");
+		System.out.println("Monte-Carlo Simulation fï¿½r die Euler'sche Zahl");
 		System.out.println("Zufallszahlengenerator: Well44497a,Apache Commons Math");
 		
 		int i, n = 150, 
@@ -45,12 +45,12 @@ public class MCEuler {
 		" und wir mischen " + numberOfTrials + " mal!");
 		System.out.println("Es gab " + counter + " Rencontres bei " 
 		     + numberOfTrials + " Versuchen!");
-		System.out.println("Die relative Häufigkeit ist " + relative);
+		System.out.println("Die relative Hï¿½ufigkeit ist " + relative);
 		
-		// Jetzt noch die Näherung
+		// Jetzt noch die Nï¿½herung
 		double approximation, error;
 		approximation = 1.0/(1.0-relative);
-		System.out.println("Unsere Näherung: " + approximation);
+		System.out.println("Unsere Nï¿½herung: " + approximation);
 		System.out.println("Der exakte Wert: " + Math.E);
 		error = Math.abs((approximation - Math.E)/Math.E);
 		System.out.println("Der relative Fehler: " + error);
