@@ -3,14 +3,11 @@ import java.math.BigInteger;
 
 /** 
  *  Berechnung der Zahlen
- *  fÃ¼r die PrÃ¼fziffer in der IBAN-Zahl.
+ *  für die Prüfziffer in der IBAN-Zahl.
  *  
- *  Da die Zahlen sehr groÃŸ werden, wird die Klasse BigInteger
- *  verwendet. Das kÃ¶nnte man durch einen Trick bei der Arithmetik
- *  vermeiden.
- *  
- *  @author $Author: brill $
- *  @version $Revisieion$
+ *  Da die Zahlen sehr groß werden, wird die Klasse BigInteger
+ *  verwendet. 
+ *  Das könnte man durch einen Trick bei der Arithmetik vermeiden.
  */
 public class IBANTest {
 
@@ -27,14 +24,14 @@ public class IBANTest {
 		// Das korrekte Ergebnis sollte 89 sein
 		System.out.println("Der berechnete Rest: " + rest);
 		
-		// 2. Wir subtrahieren den Rest von 98 und erhalten die PrÃ¼fziffern
-		// Ist das Ergebnis von 2. eine Zahl < 10, dann verwenden wir eine fÃ¼hrende Null!
+		// 2. Wir subtrahieren den Rest von 98 und erhalten die Prüfziffern
+		// Ist das Ergebnis von 2. eine Zahl < 10, dann verwenden wir eine führende Null!
 	    int pruefZiffer = maximum.subtract(rest).intValue();
-	    // Das korrekte Ergebnis sollte 9 (also 09 als PrÃ¼fziffer)
-	    System.out.println("Die PrÃ¼fziffer: " + pruefZiffer);
+	    // Das korrekte Ergebnis sollte 9 (also 09 als Prüfziffer)
+	    System.out.println("Die Prüfziffer: " + pruefZiffer);
 	    
-	    // ÃœberprÃ¼fen der PrÃ¼fziffer:
-	    // Die Zahl, fÃ¼r die wir die letzten beiden Ziffern 00 durch die PrÃ¼fziffer
+	    // Überprpüfen der Prüfziffer:
+	    // Die Zahl, für die wir die letzten beiden Ziffern 00 durch die Prüfziffer
 	    // ersetzen, muss Rest 1 bei der Division durch 97 haben.
 	    BigInteger probe = new BigInteger("542500100001234560131481");
 	    if (probe.mod(modul).intValue() == 1) 

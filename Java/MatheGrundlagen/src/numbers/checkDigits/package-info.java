@@ -1,7 +1,4 @@
 /**
- * Klassen und Beispiele zum Thema PrÃ¼fziffern.
- * 
- * @author $Author: brill $
- * @version $Revision: #1 $
+ * Klassen und Beispiele zum Thema Prüfziffern.
  */
 package numbers.checkDigits;
