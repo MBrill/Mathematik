@@ -1,5 +1,6 @@
+package graphtheory.euler;
 /**
- * class EulerGraph
+ * EulerGraph
  * @author Manfred Brill
  * 
  * Implementation of an undirected graph, represented by
@@ -8,7 +9,7 @@
  */
 public class EulerGraph {
 	
-    //// Default-Construktor
+    // Default-Construktor
     public EulerGraph() 
     {
 	    this.n = 1;
@@ -16,7 +17,7 @@ public class EulerGraph {
 	    a[0][0] = 0;
     }
 	
-	/// Constructor with dimension; no matrix
+	// Constructor with dimension; no matrix
     public EulerGraph(int dim) 
     {
 	    int i,j;
@@ -27,7 +28,7 @@ public class EulerGraph {
 	          a[i][j] = 0;
     }
 
-	/// Constructor with dimension and adjacency matrix
+	// Constructor with dimension and adjacency matrix
     public EulerGraph(int dim, int[][] matrix) 
     {
 	    int i,j;
@@ -38,7 +39,7 @@ public class EulerGraph {
 	          a[i][j] = matrix[i][j];
     }    
 
-    /// Check if two vertices are adjacent
+    // Check if two vertices are adjacent
     public boolean checkAdjacency(int i, int j)
     {
         if (this.a[i][j] > 0)
@@ -47,7 +48,7 @@ public class EulerGraph {
             return false;
     }
 
-    /// Check if the graph is simple
+    // Check if the graph is simple
     public boolean isSimple()
     {
         int i,j;
@@ -60,13 +61,13 @@ public class EulerGraph {
         return true;
     }
     
-    /// Get the number of vertices
+    // Get the number of vertices
     public int getNumberOfVertices() 
     {
     	return this.n;
     }
 
-    /// Get the number of edges in the graph
+    // Get the number of edges in the graph
     public int getNumberOfEdges()
     {
         int i, j, edges;
@@ -81,7 +82,7 @@ public class EulerGraph {
         return edges;  
     } 
         
-    /// Get the degrees of all vertices
+    // Get the degrees of all vertices
     public int[] getVertexDegrees() 
     {
         int[] degrees = new int[n];
@@ -93,8 +94,7 @@ public class EulerGraph {
         return degrees;
     }
 
-    /// Get the degree of a vertex
-    /*!
+    /**
      * If the index is not valid, the function
      * returns -1!
      */
@@ -113,8 +113,7 @@ public class EulerGraph {
             return -1;
     }  
       
-    /// Check if all degrees are even
-    /*!
+    /**
      *  If at least one vertex has odd degree the function
      *  returns false.
      */

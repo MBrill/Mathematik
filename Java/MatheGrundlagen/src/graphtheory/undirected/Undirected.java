@@ -1,14 +1,11 @@
-//----------------------------------------------------------
-// Filename:         Undirected.java
-//----------------------------------------------------------
-// Last Change :     August 28., 2009
-//----------------------------------------------------------
+package graphtheory.undirected;
 
 import java.util.*;
 import java.io.*;
 
 /**
- * class Template
+ * Application for undirected graphs.
+ * 
  * @author Manfred Brill
  * 
  * Read in the adjacency matrix of a undirected graph

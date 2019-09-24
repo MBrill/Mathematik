@@ -1,12 +1,10 @@
-//----------------------------------------------------------
-// Filename:         WeightedGraph.java
-// Last Change :     27. August, 2009
-//----------------------------------------------------------
+package graphtheory.dijkstra;
 
-public class WeightedGraph {
+
+public class WeightedGraph_schubert {
 
 	//! Konstruktor mit Anzahl der Ecken, Bewertung ist 0.0
-    public WeightedGraph(int dim) 
+    public WeightedGraph_schubert(int dim) 
     {
 	    int i,j;
 	    this.n = dim;
@@ -17,7 +15,7 @@ public class WeightedGraph {
     }
 
 	//! Konstruktor mit Anzahl der Ecken und einer Bewertung
-    public WeightedGraph(int dim, double[][] matrix) 
+    public WeightedGraph_schubert(int dim, double[][] matrix) 
     {
 	    int i,j;
 	    this.n = dim;

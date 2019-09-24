@@ -1,11 +1,9 @@
-//----------------------------------------------------------
-// $RCSfile$
-// $Revision$
-// $Date$ 
-//----------------------------------------------------------
-import java.io.*;
-//! Bewertete Graphen und kürzeste Wege
-/*!
+package graphtheory.dijkstra;
+
+//import java.io.*;
+
+/** Bewertete Graphen und kürzeste Wege.
+ * 
  *  Klasse für die Repräsentation eines bewerteten,
  *  einfachen und zusammenhängenden Graphen und die
  *  Bestimmung der kürzesten Wege von einer Ausgangsecke
@@ -13,7 +11,7 @@ import java.io.*;
  *
  *  Die Funktion WeightedGraph::dijkstra berechnet <B>alle</B>
  *  kürzeste Wege ausgehend von einer Startecke. Das Ergebnis wird
- *  als Vorgängerbaum zurückgegeben. Ist der Graph nicht zusammenhängen,
+ *  als Vorgängerbaum zurückgegeben. Ist der Graph nicht zusammenhängend,
  *  dann gibt diese Funktion false zurück.
  *
  *  Die Funktion WeightedGraph::shortestPath berechnet den
@@ -23,7 +21,7 @@ import java.io.*;
  */
 public class WeightedGraph 
 {
-	//! Konstruktor mit Anzahl der Ecken, Bewertung ist 0.0
+	// Konstruktor mit Anzahl der Ecken, Bewertung ist 0.0
     public WeightedGraph(int dim) 
     {
 	    int i,j;
@@ -39,7 +37,7 @@ public class WeightedGraph
 	    }
     }
 
-	//! Konstruktor mit Anzahl der Ecken und einer Bewertung
+	// Konstruktor mit Anzahl der Ecken und einer Bewertung
     public WeightedGraph(int dim, double[][] matrix) 
     {
 	    int i,j;
@@ -55,7 +53,7 @@ public class WeightedGraph
 	    }
     }  
 
-	//! Konstruktor mit Anzahl der Ecken und einer Bewertung
+	// Konstruktor mit Anzahl der Ecken und einer Bewertung
     public WeightedGraph(int dim, String[] nm, double[][] matrix) 
     {
 	    int i,j;
@@ -71,7 +69,7 @@ public class WeightedGraph
 	    }
     }  
             
-    //! Zwei gegebene Ecken auf Adjazenz überprüfen
+    // Zwei gegebene Ecken auf Adjazenz überprüfen
     public boolean checkAdjacency(int i, int j)
     {
         if (this.a[i][j] > 0.0)
@@ -80,19 +78,19 @@ public class WeightedGraph
             return false;
     }
 
-    //! Namen für Ecke i zurückgeben    
+    // Namen für Ecke i zurückgeben    
     public String getName(int v)
     {
         return names[v];
     }
     
-    //! Alle Namen als Feld zurückgeben
+    // Alle Namen als Feld zurückgeben
     public String[] getNames()
     {
         return names;
     }
     
-    //! Die Grade aller Ecken zurückgeben
+    // Die Grade aller Ecken zurückgeben
     public int[] getVertexDegrees() 
     {
         int[] degrees = new int[n];
@@ -104,7 +102,7 @@ public class WeightedGraph
         return degrees;
     }
 
-    //! Die Anzahl der Kanten berechnen und zurückgeben
+    // Die Anzahl der Kanten berechnen und zurückgeben
     public int getNumberOfEdges()
     {
         int i, j, edges;
@@ -118,11 +116,11 @@ public class WeightedGraph
         return edges;  
     } 
         
-    //! Den Grad einer Ecke berechnen
-    /*!
-     * @param vertex: Ecke, für die der Grad gesucht ist.
-     * 
-     * Falls ein ungültiger Eckpunktindex übergeben wird
+    /**
+     *  Den Grad einer Ecke berechnen.
+     *  
+     * @param vertex Ecke, für die der Grad gesucht ist.
+     * @return Falls ein ungültiger Eckpunktindex übergeben wird
      * gibt die Funktion -1 zurück!
      */
     public int getDegree(int vertex) 
@@ -143,14 +141,13 @@ public class WeightedGraph
             return -1;
     }  
 
-    //! Die Anzahl der Eckpunkte zurückgeben
+    // Die Anzahl der Eckpunkte zurückgeben
     public int getNumberOfVertices() 
     {
     	return this.n;
     }
         
-    //! Das Hand-Shaking Theorem überprüfen
-    /*!
+    /**
      *  Das Hand-Shaking Theorem sagt aus, dass die Summe aller Eckengrade
      *  eine gerade Zahl ist, gegeben durch die doppelte Anzahl der Kanten.
      *  Ist diese Gleichung verletzt repräsentiert die Matrix keinen Graphen.
@@ -173,7 +170,7 @@ public class WeightedGraph
             return false;
     }
         
-    //! Die Adjazenzmatrix abfragen
+    // Die Adjazenzmatrix abfragen
     public double[][] getAdjacencyMatrix() 
     {
         double[][] matrix = new double[n][n];    
@@ -185,8 +182,7 @@ public class WeightedGraph
     }
 
           
-    //! Implementierung des Dijkstra Algorithmus
-    /*!
+    /**
      * Es werden *alle* kürzesten Wege von der Startecke a berechnet
      * und als Vorgängerbaum zurückgegeben.
      *
@@ -214,7 +210,7 @@ public class WeightedGraph
             int nXmin = -1, nYmin = -1;
             double lMin=Double.MAX_VALUE;
             found = false;
-            boolean first = true;
+            //boolean first = true;
             
             for (i=0; i<n; i++)
             {
@@ -247,8 +243,8 @@ public class WeightedGraph
         return true;
     }
 
-    //! Implementierung des Dijkstra Algorithmus für eine gegebene Start- und Zielecke
-    /*!
+    /** Implementierung des Dijkstra Algorithmus für eine gegebene Start- und Zielecke.
+     * 
      * Berechnung des kürzesten Weges von der Startecke start zur Endecke end.
      *
      * Ist die Instanz kein zusammenhängender Graph, dann
@@ -275,7 +271,7 @@ public class WeightedGraph
             int nXmin = -1, nYmin = -1;
             double lMin=Double.MAX_VALUE;
             found = false;
-            boolean first = true;
+            //boolean first = true;
             
             for (i=0; i<n; i++)
             {
@@ -328,8 +324,8 @@ public class WeightedGraph
         return true;
     }
       
-    //! Die Länge der berechneten kürzesten Wege zurückgeben
-    /*!
+    /** Die Länge der berechneten kürzesten Wege zurückgeben.
+     * 
      *  Das Feld enthält die Länge der kürzesten Wege, die von der Funktion
      *  WeightedGraph::dijkstra berechnet wurden.
      *
@@ -341,8 +337,8 @@ public class WeightedGraph
         return d;
     }
  
-    //! Die Länge des berechneten kürzesten Weges zurückgeben
-    /*!
+    /**Die Länge des berechneten kürzesten Weges zurückgeben.
+     * 
      *  Das Feld enthält die Länge des kürzesten Weges, die von der Funktion
      *  WeightedGraph::shortestPath berechnet wurden.
      *
@@ -372,7 +368,7 @@ public class WeightedGraph
     }
   
 
-    //! Überprüfen, ob es noch unbesuchte Ecken gibt
+    // Überprüfen, ob es noch unbesuchte Ecken gibt
     private boolean unVisited(boolean[] inTree)
     {
         boolean all = true;
@@ -384,12 +380,12 @@ public class WeightedGraph
         return all;
     }                
     
-    //! Anzahl der Eckpunkte im Graphen
+    // Anzahl der Eckpunkte im Graphen
     private int n;    
-    //! Die Adjazenzmatrix
+    // Die Adjazenzmatrix
     private double[][] a;   
-    //! Die Distanzen innerhalb des Vorgängerbaumes
+    // Die Distanzen innerhalb des Vorgängerbaumes
     private double[] d;
-    //! Namen der Eckpunkte
+    // Namen der Eckpunkte
     private String[] names;
 }

@@ -1,14 +1,16 @@
+package graphtheory.undirected;
+
 /**
- * class UndirectedGraph
- * @author Manfred Brill
+ * UndirectedGraph
  * 
- * Implementation of an undirected graph, represented by
+ * Implementation of an undirected graph, represented 
  * by an adjacency matrix.
  *
+ * * @author Manfred Brill
  */
 public class UndirectedGraph {
 	
-    //// Default-Construktor
+    //Default-Construktor
     public UndirectedGraph() 
     {
 	    this.n = 1;
@@ -16,7 +18,7 @@ public class UndirectedGraph {
 	    a[0][0] = 0;
     }
 	
-	/// Constructor with dimension; no matrix
+	// Constructor with dimension; no matrix
     public UndirectedGraph(int dim) 
     {
 	    int i,j;
@@ -27,7 +29,7 @@ public class UndirectedGraph {
 	          a[i][j] = 0;
     }
 
-	/// Constructor with dimension and adjacency matrix
+	// Constructor with dimension and adjacency matrix
     public UndirectedGraph(int dim, int[][] matrix) 
     {
 	    int i,j;
@@ -38,7 +40,7 @@ public class UndirectedGraph {
 	          a[i][j] = matrix[i][j];
     }    
 
-    /// Check if two vertices are adjacent
+    ///Check if two vertices are adjacent
     public boolean checkAdjacency(int i, int j)
     {
         if (this.a[i][j] > 0)
@@ -47,7 +49,7 @@ public class UndirectedGraph {
             return false;
     }
 
-    /// Check if the graph is simple
+    // Check if the graph is simple
     public boolean isSimple()
     {
         int i,j;
@@ -60,13 +62,13 @@ public class UndirectedGraph {
         return true;
     }
     
-    /// Get the number of vertices
+    // Get the number of vertices
     public int getNumberOfVertices() 
     {
     	return this.n;
     }
 
-    /// Get the number of edges in the graph
+    // Get the number of edges in the graph
     public int getNumberOfEdges()
     {
         int i, j, edges;
@@ -81,7 +83,7 @@ public class UndirectedGraph {
         return edges;  
     } 
         
-    /// Get the degrees of all vertices
+    // Get the degrees of all vertices
     public int[] getVertexDegrees() 
     {
         int[] degrees = new int[n];
@@ -93,8 +95,8 @@ public class UndirectedGraph {
         return degrees;
     }
 
-    /// Get the degree of a vertex
-    /*!
+    /** Get the degree of a vertex.
+     * 
      * if the index is not valid, the function
      * returns -1!
      */
@@ -113,7 +115,7 @@ public class UndirectedGraph {
             return -1;
     }  
       
-    /// Check if for the graph the Handshaking Theorem is valid
+    // Check if for the graph the Handshaking Theorem is valid
     public boolean checkHandshake()
     {
         int i, sum;
@@ -143,8 +145,8 @@ public class UndirectedGraph {
         return matrix;
     }
 
-    //! Number of vertices
+    // Number of vertices
     private int n;    
-    //! Adjacency matrix
+    // Adjacency matrix
     private int[][] a;  
 }

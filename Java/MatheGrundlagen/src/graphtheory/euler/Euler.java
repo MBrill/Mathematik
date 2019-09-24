@@ -1,14 +1,11 @@
-//----------------------------------------------------------
-// Filename:         Euler.java
-//----------------------------------------------------------
-// Last Change :     August 28., 2009
-//----------------------------------------------------------
+package graphtheory.euler;
 
 import java.util.*;
 import java.io.*;
 
 /**
- * class Euler
+ * Application for class EulerGraph.
+ * 
  * @author Manfred Brill
  * 
  * Read in the adjacency matrix of a undirected graph

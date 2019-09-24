@@ -1,8 +1,9 @@
+package graphtheory.dijkstra;
+
 import java.util.*;
 import java.io.*;
 
-//! Applikation
-/*!
+/**
  * Die Klasse verwendet eine Instanz der Klasse WeightedGraph.
  *
  * Die Eingabedaten werden mit Hilfe einer Instanz der Klasse Scanner
@@ -37,12 +38,12 @@ import java.io.*;
  */
 public class Dijkstra 
 {
-    //! Dateiname für die Eingabedaten
+    // Dateiname für die Eingabedaten
     private static final String FileInputName = "Dijkstra.in";
-    //! Dateiname für die Ausgabedaten
+    // Dateiname für die Ausgabedaten
     private static final String FileOutputName = "Dijkstra.out";  
 
-    //! Main-Funktion der Application
+    // Main-Funktion der Application
     public static void main(String[] args) throws IOException
     {
       Scanner input = null;
@@ -122,7 +123,7 @@ public class Dijkstra
       }	
     }  
     
-    //! Konstruktion der kürzesten Wege auf der Basis des Vorgängerbaums
+    // Konstruktion der kürzesten Wege auf der Basis des Vorgängerbaums
     private static final void constructPaths(int[] pre, int[][] paths)
     {
         int n = pre.length;
@@ -145,7 +146,7 @@ public class Dijkstra
         }
     }
 
-    //! Ausgabe der Resultate
+    // Ausgabe der Resultate
     private static final void printResults(PrintStream out,
                                            String[] namen,
                                            int[] tree,
@@ -168,7 +169,7 @@ public class Dijkstra
           }         
     }
     
-    //! Ausgabe der Resultate für einen kürzesten Weg
+    // Ausgabe der Resultate für einen kürzesten Weg
     private static final void printPath(PrintStream out,
                                         String[] namen,
                                         int start, int end, 
@@ -199,84 +200,3 @@ public class Dijkstra
               
     }   
 }
-
-/*!
- * \mainpage 
- * 
- * <H1>Multimediaprojekt Wintersemester 2009/2010</H1> 
- * <CENTER>
- * <H2>Graphentheoretische Konzepte und Algorithmen</H2>
- * <H2>Prof. Dr. Manfred Brill</H2>
- * </CENTER>
- *
- * <BR>
- * \image html example.jpg
- *
- * <BR>
- * <H3>Ein- und Ausgabe</H3>
- * Die Aufgabenstellung wird in der Datei Dijkstra.in eingegeben, die Datei Dijkstra.out enthält
- * die Ergebnisse.
- *
- * In der Eingabedatei mit dem Namen Dijkstra.in geben Sie die Anzahl der Eckpunkte des Graphen an,
- * gefolgt von den Namen der Eckpunkte, der Adjanzenzmatrix und der Startecke.
- *
- * Das Beispiel aus den Folien des Workshops als Eingabedatei sieht dann wie folgt aus:
- *
- * <HR>
- * 6
- *
- * a b c d e f
- *
- * 0,0 4,0 0,0 2,0 0,0 0,0
- *
- * 4,0 0,0 3,0 0,0 3,0 0,0
- *
- * 0,0 3,0 0,0 0,0 0,0 2,0
- *
- * 2,0 0,0 0,0 0,0 3,0 0,0
- *
- * 0,0 3,0 0,0 3,0 0,0 1,0
- *
- * 0,0 0,0 2,0 0,0 1,0 0,0
- *
- * 0 0 4
- * <HR>
- *
- * In der Ausgabedatei wird für jeden Eckpunkt des Graphen der berechnete 
- * kürzeste Weg von der verwendeten
- * Startecke aus angegeben; dabei werden die Namen der Eckpunkte verwendet. 
- * Abschließend wird die Länge
- * des kürzesten Weges angegeben.
- *
- * Für die oben angegebene Eingabedatei wird dann die folgende 
- * Ausgabedatei erzeugt:
- *
- * <HR>
- * a : a : distanz(a,a) = 0.0
- * 
- * b : a , b : distanz(a,b) = 4.0
- *
- * c : a , b , c : distanz(a,c) = 7.0
- *
- * d : a , d : distanz(a,d) = 2.0
- *
- * e : a , d , e : distanz(a,e) = 5.0
- *
- * f : a , d , e , f : distanz(a,f) = 6.0
- * <HR>
- *
- * Geben Sie nach der Adjazenzmatrix als erste Zahl eine 1 ein, dann
- * Indices dazu verwendet, um den kürzesten Weg zwischen den beiden Knoten
- * zu bestimmen, statt aller Wege.
- *
- * <H3>Weitere Eingabedateien</H3>
- * Zusätzlich zu dieser Eingabedatei stehen weitere Dateien zur Verfügung, die als Testfälle
- * verwendet werden können. Kopieren Sie die Dateien in Dijkstra.in und führen Sie die Applikation
- * neu aus, um das Ergebnis zu erhalten. Die Originaldatei kann mit Hilfe der Datei
- * <slide.in> wieder rekonstruiert werden.
- *
- * -# slide.in: Eingabedatei mit dem Folienbeispiel, wie oben angegeben. 
- * -# mathebuch.in: Eingabedatei mit einem Beispiel aus Manfred Brill, Mathematik für Informatiker (2. Auflage), mit dem Beispiel aus Abbildung 7.30 auf Seite 182.
- * -# schubert.in: Eingabedatei mit einem Beispiel aus Matthias Schubert: Mathematik für Informatiker, mit dem Beispiel aus Bild 15-5 auf Seite 407.
- * -# unconnected.in: Ein unzusammenhängender Graph als Testbeispiel für eine negative Antwort.
- */
