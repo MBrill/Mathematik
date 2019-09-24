@@ -1,1 +1,5 @@
+# Mathematische Grundlagen
 /bin/
+
+# out-Files der Beispiele ignorieren
+**/*.out
