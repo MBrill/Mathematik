@@ -1,8 +1,7 @@
-package numbers.euklid;
 import java.io.*;
 import java.util.*;
 
-/*!
+/**
  *   Implementierung des Euklidischen Algorithmus
  */
 public class Euklid 

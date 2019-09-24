@@ -1,6 +1,7 @@
-package numbers.factorsOut;
+package numbers.assignment;
 
 import java.util.ArrayList;
+
 
 /**
  * Berechnung aller Teiler einer ganzen Zahl. 

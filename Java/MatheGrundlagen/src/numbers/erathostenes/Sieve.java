@@ -1,23 +1,10 @@
-//----------------------------------------------------------
-// Filename:         Sieve.java
-//----------------------------------------------------------
-// Last Change :     August 27., 2009
-//----------------------------------------------------------
+package numbers.erathostenes;
 import java.util.*;
 import java.io.*;
 
 /**
- * class Sieve
- * @author Manfred Brill
- * Sieve for the main program of a Java application
- * for the demonstration of mathematical algorithms.
- *
- * Uses the classes Scanner and Printstream.
- * The instances are called
- *    Scanner input;
- * and
- *    PrintStream output;
- *
+ * Sieb des Erathostenes.
+ * 
  * the input-File has the name "Sieve.in"
  * The output-File has the name "Sieve.out"
  *

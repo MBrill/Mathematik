@@ -1,4 +1,4 @@
-package Collatz;
+package functions.collatz;
 
 /*!
  * Hauptprogramm für den Test der Klasse Collatz

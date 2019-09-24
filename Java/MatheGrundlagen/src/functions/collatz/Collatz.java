@@ -1,6 +1,5 @@
-package Collatz;
+package functions.collatz;
 
-//Imports für Log4j 2
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,4 +1,4 @@
-package numbers.factorsOut;
+package numbers.assignment;
 
 /**
  * Hauptprogramm für die Berechnung aller Teiler einer angegebenen Zahl.

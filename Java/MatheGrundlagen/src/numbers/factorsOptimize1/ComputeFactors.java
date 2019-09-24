@@ -16,11 +16,8 @@ import org.apache.logging.log4j.Logger;
  * in die Liste aufgenommen!
  * 
  * Die Optimierung besteht darin, dass wir die while-Schleife schon bei
- * this.number div 2 aufhÃ¶ren kÃ¶nnen; grÃ¶ÃŸere Teiler kann es nicht geben!
- * Dadurch halbieren wir die Anzahl der SchleifendurchlÃ¤ufe!
- * 
- * @author  $Author: brill $
- * @version $Revision:
+ * this.number div 2 aufhören können; größere Teiler kann es nicht geben!
+ * Dadurch halbieren wir die Anzahl der Schleifendurchläufe!
  */
 public class ComputeFactors {
 
