@@ -17,23 +17,26 @@ public class WalkExperiment
 		// Zufallszahlen-Generator erzeugen mit MersenneTwister-Instanz
 		RandomDataGenerator genTwist= new RandomDataGenerator(twister);
 		int max = 100,
-			xH = -10,
-		    yH = -10,
-		    xSize = 20,
-			ySize = 20;
+			xStart = 0,
+			yStart = 0,
+			xH = -3,
+		    yH = 3,
+		    xSize = 5,
+			ySize = 5;
 		// RandomWalk
         RandomWalk2D experiment = new RandomWalk2D(genTwist, 
+        		                                   xStart, yStart,
         		                                   xSize, ySize, 
         		                                   xH, yH, 
         		                                   max);
         		       
-        // Wir fÃ¼hren das Experiment durch
+        // Wir führen das Experiment durch
 		int numberOfRuns = 10000000, N=100;
 		double counter = 0.0, means = 0.0;
 		
 		System.out.println("Wir simulieren den Random Walk");
 		System.out.println("Der Zielpunkt ist (" + xH + "," + yH + ")");
-		System.out.println("Wir fÃ¼hren das Experiment " + N + "-mal durch.");
+		System.out.println("Wir führen das Experiment " + N + "-mal durch.");
 		System.out.println("Jedes Experiment testet den Zielpunkt " + numberOfRuns + "-mal");
 		System.out.println("Bitte etwas Geduld!");
 		
