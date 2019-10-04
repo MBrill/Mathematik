@@ -17,7 +17,7 @@ x, y = curves.first_example(t)
 
 style = 'seaborn'
 plt.style.use(style)
-ax.set_title('Unsere erste Parameterkurve'.format(style), color='C0')
+ax.set_title('Unsere erste Parameterkurve mit matplotlib'.format(style), color='C0')
 
 ax.set_xlabel('x')
 ax.set_ylabel('y')
