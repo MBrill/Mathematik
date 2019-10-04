@@ -2,7 +2,7 @@
 
    Return-Werte werden als Tupel erzeugt 
    Bisher realisiert:
-   Zykloide . cycloid
+   Zykloide . Helix
 """
 import numpy as np
 
