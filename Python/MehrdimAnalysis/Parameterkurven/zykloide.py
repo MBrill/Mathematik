@@ -1,3 +1,5 @@
+"""Grafische Ausgabe der Zykloide mit matplotlib.pyplot
+"""
 import matplotlib.pyplot as plt
 import numpy as np
 import curves
