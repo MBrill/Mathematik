@@ -45,12 +45,12 @@ spline2 = bezier.Curve(nodes2, degree=3)
 
 # Grafische Ausgabe
 fig = plt.figure()
-
+ax = fig.add_subplot(111)
 # Parameterintervall digitalisieren
 # Wie viele Samples?
 n = 256
 
-ax = spline1.plot(num_pts=n)
+spline1.plot(num_pts=n, ax=ax)
 spline2.plot(num_pts=n, ax=ax)
 # Kontrollpolygone
 ax.plot(x1, y1, color='C0', label='Quadratischer Spline')
@@ -67,3 +67,5 @@ ax.set_title('Bezierkurven und Kontrollpolygone'.format(style), color='C0')
 ax.legend()
 
 plt.show()
+
+fig.savefig('images/bezier.png', dpi=300)
