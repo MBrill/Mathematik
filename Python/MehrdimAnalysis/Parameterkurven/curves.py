@@ -32,3 +32,10 @@ def aufgabe1b(t) :
     x = t3*t - 1.0
     y = t3 + 1.0
     return x, y
+
+""" Logarithmische Spirale """
+def logSpiral(radius, t) :
+    r = radius * np.exp(t)
+    x = r * np.cos(t)
+    y = r * np.sin(t)
+    return x, y
