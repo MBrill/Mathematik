@@ -34,8 +34,8 @@ def aufgabe1b(t) :
     return x, y
 
 """ Logarithmische Spirale """
-def logSpiral(radius, theta) :
-    r = radius * np.exp(theta)
+def logSpiral(a, k, theta) :
+    r = a * np.exp(k*theta)
     x = r * np.cos(theta)
     y = r * np.sin(theta)
     return x, y
