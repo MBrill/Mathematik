@@ -34,8 +34,15 @@ def aufgabe1b(t) :
     return x, y
 
 """ Logarithmische Spirale """
-def logSpiral(radius, t) :
-    r = radius * np.exp(t)
-    x = r * np.cos(t)
-    y = r * np.sin(t)
+def logSpiral(radius, theta) :
+    r = radius * np.exp(theta)
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
+    return x, y
+
+""" Archimedische Spirale """
+def archimedeanSpiral(k, theta) :
+    r = k * theta
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
     return x, y

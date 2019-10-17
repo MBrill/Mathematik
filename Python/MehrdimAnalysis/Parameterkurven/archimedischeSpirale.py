@@ -4,25 +4,29 @@ import matplotlib.pyplot as plt
 import numpy as np
 import curves
 
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ 
 # Parameterintervall digitalisieren
 # Wie viele Samples?
-n = 40
-thetaMin = 0.0*np.pi
-thetaMax = 3.0*np.pi
+n = 200
+thetaMin = 0.0
+thetaMax = 6.0*np.pi
 theta = np.linspace(thetaMin, thetaMax, n)
-radius = 0.15
+k = 0.5
 
 # x und y-Koordinaten der Kurve berechnen
-x, y = curves.logSpiral(radius, theta)
+x, y = curves.archimedeanSpiral(k, theta)
 
-fig = plt.figure(figsize=(10,10))
-ax = fig.add_subplot(111)
 style = 'seaborn'
 plt.style.use(style)
-ax.set_title('Logarithmische Spirale'.format(style), color='C0')
+title = 'Archimedische Spirale mit k=' + str(k)
+ax.set_title(title.format(style), color='C0')
 
 ax.set_xlabel('x')
 ax.set_ylabel('y')
 plt.plot(x, y, 'C1')
 
 plt.show()
+
+fig.savefig('images/archimedes.png', dpi=300)
