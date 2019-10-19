@@ -32,3 +32,17 @@ def aufgabe1b(t) :
     x = t3*t - 1.0
     y = t3 + 1.0
     return x, y
+
+""" Logarithmische Spirale """
+def logSpiral(a, k, theta) :
+    r = a * np.exp(k*theta)
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
+    return x, y
+
+""" Archimedische Spirale """
+def archimedeanSpiral(k, theta) :
+    r = k * theta
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
+    return x, y
