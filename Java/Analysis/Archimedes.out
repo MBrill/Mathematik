@@ -1,0 +1,9 @@
+Ergebnis der des Verfahrens von Archimedes
+------------------------------------------
+Die verwendete Abbruchgenauigkeit: 5.0E-10
+Maximale Anzahl der Iterationen: 100
+Anzahl der durchgefuehrten Iterationen: 15
+Das Ergebnis:
+pi ist angenaehert als 3.1415926536566383
+Absoluter Fehler zu Math.PI: 6.684519604505113E-11
+Relativer Fehler zu Math.PI: 2.12774867450334E-11
