@@ -11,8 +11,8 @@ radius = 1.0
 # Parameterintervall digitalisieren
 # Wie viele Samples?
 n = 10000
-t_min = -1000.0
-t_max = 200.0
+t_min = -1.0#0
+t_max = 1.0#0.5*np.pi
 t = np.linspace(t_min, t_max, n)
 
 # x, y und z-Koordinaten der Kurve berechnen
@@ -27,7 +27,7 @@ ax.plot(x, y, z, label='schraubenlinie')
 
 ax.set_xlabel('x')
 ax.set_ylabel('y')
-ax.set_ylabel('z')
+ax.set_zlabel('z')
 plt.plot(x, y, z, 'C1')
 
 plt.show()
