@@ -1,4 +1,4 @@
-"""Ausgabe unseres ersten Beispiels aus der Vorlesung
+""" Ausgabe unseres ersten Beispiels aus der Vorlesung
 """
 import matplotlib.pyplot as plt
 import numpy as np
