@@ -4,8 +4,9 @@ Wireframe-Darstellung einer Funktion von zwei reellen Veraenderlichen
 Andere Funktion verwenden: die Berechnung der z-Werte anpassen
 Und nicht vergessen, den Dateinamen fuer die Bitmap zu veraendern!
 """
+import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+#from mpl_toolkits.mplot3d import Axes3D
 
 import functions as fun
 
@@ -13,19 +14,19 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
 # Paraboloid
-#r = np.arange(0, 6.0*np.pi, 0.05)
-#t = np.arange(0.0, 2.0*np.pi, 0.01)
-#r, t = np.meshgrid(r, t)
+r = np.arange(0, 6.0*np.pi, 0.05)
+t = np.arange(0.0, 2.0*np.pi, 0.01)
+r, t = np.meshgrid(r, t)
 # Kartesische Koordinaten
-#x = r*np.cos(t)
-#y = r*np.sin(t)
-#z = r**2
+x = r*np.cos(t)
+y = r*np.sin(t)
+z = fun.ellParaboloid(x, y)
 
-# imshow-Beispiel
-x = np.linspace(0, 1.0*np.pi, 200)
-y = np.linspace(0, 2.0*np.pi, 200)
-x, y = np.meshgrid(x, y)
-z = sinsin(x, y)
+# sinsin
+#x = np.linspace(0, 1.0*np.pi, 200)
+#y = np.linspace(0, 2.0*np.pi, 200)
+#x, y = np.meshgrid(x, y)
+#z = fun.sinsin(x, y)
 
 # Sombrero
 # Definitionsbereich
@@ -55,7 +56,7 @@ z = sinsin(x, y)
 linewidth = 0.8
 dpi = 100
 quality = 100
-plotfile = 'Wireframe.png'
+plotfile = 'images/paraboloid.png'
 
 ax.plot_wireframe(x, y, z,  
                 alpha=0.9, 
