@@ -1,7 +1,6 @@
 """
 Funktionen von R^2 nach R
-
-@author: Manfred Brill
+für die Vorlesung Computerorientierte Mathematik
 """
 import numpy as np
 
