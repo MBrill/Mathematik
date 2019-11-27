@@ -51,6 +51,7 @@ z = fun.ellParaboloid(x, y)
 #y = np.linspace(ymin, ymax, n)
 #x, y = np.meshgrid(x, y)
 #z = fun.rosenbrock(x, y)
+>>>>>>> d8bd9072b60f261c64612722d25d466dfb70a711
 
 #
 linewidth = 0.8
