@@ -25,7 +25,7 @@ ax = fig.add_subplot(111)
 #y = np.linspace(ymin, ymax, n)
 #x, y = np.meshgrid(x, y)
 # Funktionsvorschrift
-#z = x*x + y*y
+#z = ellParaboloid(x,y)
 
 #imshow-Beipiel
 #x = np.linspace(0, 1.0*np.pi, n)

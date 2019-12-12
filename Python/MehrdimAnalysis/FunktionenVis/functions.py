@@ -13,11 +13,11 @@ def rosenbrock(x, y) :
 def sinsin(x, y) :
     return -np.sin(x)*np.sin(y)
 
-""" Elliptisches Paraboloid """
+""" Paraboloid """
 def ellParaboloid(x, y) :
     return x*x + y*y
 
-""" Elliptisches Paraboloid """
+""" Hyperbolisches Paraboloid """
 def hypParaboloid(x, y) :
     return x*x - y*y
 
