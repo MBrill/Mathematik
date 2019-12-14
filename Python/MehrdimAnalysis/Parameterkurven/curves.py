@@ -1,9 +1,6 @@
-"""Planare Parameterkurven 
+""" Planare Parameterkurven 
 
    Return-Werte werden als Tupel erzeugt 
-   Bisher realisiert:
-   Zykloide - cycloid
-   Erstes Beispiel - first_example
 """
 import numpy as np
 

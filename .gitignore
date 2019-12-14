@@ -13,6 +13,9 @@
 .classpath
 .project
 
+# Logging Ausgaben
+**/[lL]ogs/*
+
 # vi backups
 *.*~
 **/*~

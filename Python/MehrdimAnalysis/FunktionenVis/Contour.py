@@ -27,11 +27,17 @@ ax = fig.add_subplot(111)
 # Funktionsvorschrift
 #z = ellParaboloid(x,y)
 
-#imshow-Beipiel
-#x = np.linspace(0, 1.0*np.pi, n)
-#y = np.linspace(0, 2.0*np.pi, n)
-#x, y = np.meshgrid(x, y)
-#z = -np.sin(x)*np.sin(y) 
+# sin(x)sin(y)
+# Definitionsbereich
+xmin = 0.0
+xmax = 3.0
+ymin = 0.0
+ymax = 6.0
+n = 200
+x = np.linspace(0, 1.0*np.pi, n)
+y = np.linspace(0, 2.0*np.pi, n)
+x, y = np.meshgrid(x, y)
+z = fun.sinsin(x, y)
 
 # Sombrero
 #n = 2000
@@ -58,20 +64,20 @@ ax = fig.add_subplot(111)
 #z = fun.rosenbrock(x, y)
 
 # Beispiel einer quadratischen Funktion aus der Vorlesung
-xmin = -4.0
-xmax = 5.0
-ymin = -5.0
-ymax = 4.0
-n = 500
+#xmin = -4.0
+#xmax = 5.0
+#ymin = -5.0
+#ymax = 4.0
+#n = 500
 
-x = np.linspace(xmin, xmax, n)
-y = np.linspace(ymin, ymax, n)
-x, y = np.meshgrid(x, y)
-z = fun.quadFunction(x, y)
+#x = np.linspace(xmin, xmax, n)
+#y = np.linspace(ymin, ymax, n)
+#x, y = np.meshgrid(x, y)
+#z = fun.quadFunction(x, y)
 
-Cmin = 0.0
-Cmax = 16.0
-Cstep = 2
+Cmin = -1.0
+Cmax = 1.0
+Cstep = 0.2
 
 levels = np.arange(Cmin, Cmax, Cstep)
 cplot = ax.contour(x, y, z, levels=levels,
@@ -82,9 +88,9 @@ cplot = ax.contour(x, y, z, levels=levels,
 # Die nächste Zeile kommentieren wenn wir keine Labels in 
 # den Konturlinien haben möchten
 #plt.clabel(cplot, inline=1, fontsize=12)
-#cbar = plt.colorbar(cplot, shrink=0.8, extend='both')
-#cbar.ax.get_yaxis().labelpad=15
-#cbar.ax.set_ylabel('Konturwerte', rotation=270)
+cbar = plt.colorbar(cplot, shrink=0.8, extend='both')
+cbar.ax.get_yaxis().labelpad=15
+cbar.ax.set_ylabel('Konturwerte', rotation=270)
 #plt.title('Isolinien mit Labels')
 
 # Plot abspeichern
