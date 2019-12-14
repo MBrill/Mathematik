@@ -54,13 +54,6 @@ def fss(t) :
         print("Falscher t-Wert")
 
        
-# Kontrolle
-print(fss(2.95))
-print(fss(2.98))
-print(fss(3))
-print(fss(3.025))
-print(fss(3.05))
-
 # Funktionen vektorisieren!
 vf = np.frompyfunc(f, 1, 1)
 vfs = np.frompyfunc(fs, 1, 1)
