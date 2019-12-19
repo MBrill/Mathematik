@@ -7,7 +7,7 @@ import space_curves
 fig = plt.figure()
 
 
-# Eigenschaften der Zykloide (Radius)
+# Eigenschaften der Helix (Radius)
 radius = 1.0
 height = 2.0
 # Parameterintervall digitalisieren

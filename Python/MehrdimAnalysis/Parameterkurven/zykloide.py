@@ -1,5 +1,7 @@
-"""Grafische Ausgabe der Zykloide mit matplotlib.pyplot
 """
+Grafische Ausgabe der Zykloide mit matplotlib.pyplot
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import curves
@@ -12,7 +14,7 @@ radius = 1.0
 # Parameterintervall digitalisieren
 # Wie viele Samples?
 n = 200
-theta = np.linspace(-6*np.pi, 6*np.pi, n)
+theta = np.linspace(-4*np.pi, 4*np.pi, n)
 
 # x und y-Koordinaten der Kurve berechnen
 x, y = curves.cycloid(radius, theta)
@@ -26,3 +28,5 @@ ax.set_ylabel('y')
 plt.plot(x, y, 'C1')
 
 plt.show()
+
+fig.savefig('images/zykloide.png', dpi=300)
