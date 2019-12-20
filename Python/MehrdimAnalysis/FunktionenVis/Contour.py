@@ -25,7 +25,7 @@ ax = fig.add_subplot(111)
 #y = np.linspace(ymin, ymax, n)
 #x, y = np.meshgrid(x, y)
 # Funktionsvorschrift
-#z = x*x + y*y
+#z = ellParaboloid(x,y)
 
 # sin(x)sin(y)
 # Definitionsbereich
