@@ -1,5 +1,5 @@
 """
-Isolinien eines quadratischen Form als Beispiel
+Isolinien einer quadratischen Form als Beispiel
 für die Optimierung dieser Funktion.
 """
 import matplotlib.pyplot as plt
@@ -7,7 +7,7 @@ import numpy as np
 
 def ellParaboloid(x, y) :
     """ Elliptisches Paraboloid """
-    return 4.0*x*x + 9*y*y
+    return 4.0*x*x + 9.0*y*y
 
 
 print("------------")

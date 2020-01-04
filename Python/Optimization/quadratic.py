@@ -7,7 +7,7 @@ import numpy as np
 
 def ellParaboloid(x, y) :
     """ Elliptisches Paraboloid """
-    return 4.0*x*x + 9*y*y
+    return 4.0*x*x + 9.0*y*y
 
 
 fig = plt.figure()

@@ -37,7 +37,7 @@ result = optimize.minimize_scalar(f,
                                   
 if result.success:
     print("Der Algorithmus war erfolgreich!")
-    print("Der berechnete x-Wert des Lokalen Minimums:", result.x)
+    print("Der berechnete x-Wert des lokalen Minimums:", result.x)
     print("Der Funktionswert an diesem x-Wert:", result.fun)
     print("Wir haben", result.nfev, "Funktionsauswertungen benötigt")
     print("Wir haben", result.nit, "Iterationen durchgeführt")
