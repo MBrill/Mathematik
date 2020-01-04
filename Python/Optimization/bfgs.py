@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Beispiel für die Verwendung des Newton-Algorithmus in SciPy.
-
-Wir verwenden hier sowohl den exakten Gradienten als
-auch die exakte Hesse-Matrix!
+Beispiel für die Verwendung des BFGS-Algorithmus in SciPy.
 """
 import numpy as np
 from scipy import optimize
@@ -20,18 +17,13 @@ def f(x) :
 def jacobi(x) :
     return np.array([8.0*x[0], 18.0*x[1]])
 
-# Die Hesse-Matrix für die Zielfunktion
-def hesse(x) :
-    return np.array([[8.0, 0.0], [0.0, 18.0]])
-
-
 # Startwert
 # In den Folien zu steepest descent hatten wir (0.5,0)
 # und als zweiten Startwert (0.5, 0.333)
-x0 = np.array([0.5, 1.0/3.0])
+x0 = np.array([0.5, 10.0])
 
 print("---------------------------------")
-print("------  Newton       -------")
+print("------  BFGS       -------")
 print("Startwert:", x0)
 print("Exaktes lokales Minimum ist der Punkt (0,0)")
 print("---------------------------------")
@@ -41,9 +33,8 @@ maxIter = 100
 
 # disp: Ausgaben oder nicht?
 result = optimize.minimize(f, x0,
-                           method="newton-cg",
+                           method="bfgs",
                            jac=jacobi,
-                           hess=hesse,
                            options={'maxiter': maxIter,
                                     'xtol': 1e-5,
                                     'disp': False})

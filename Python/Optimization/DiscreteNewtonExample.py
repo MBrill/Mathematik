@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Beispiel für die Verwendung des Newton-Algorithmus in SciPy.
+Beispiel für die Verwendung des diskreten
+Newton-Algorithmus in SciPy.
 
-Wir verwenden hier sowohl den exakten Gradienten als
-auch die exakte Hesse-Matrix!
+Wir verwenden hier den exakten Gradienten,
+die Hesse-Matrix wird in der Funktion angenähert!
 """
 import numpy as np
 from scipy import optimize
@@ -20,18 +21,13 @@ def f(x) :
 def jacobi(x) :
     return np.array([8.0*x[0], 18.0*x[1]])
 
-# Die Hesse-Matrix für die Zielfunktion
-def hesse(x) :
-    return np.array([[8.0, 0.0], [0.0, 18.0]])
-
-
 # Startwert
 # In den Folien zu steepest descent hatten wir (0.5,0)
 # und als zweiten Startwert (0.5, 0.333)
-x0 = np.array([0.5, 1.0/3.0])
+x0 = np.array([0.5, 0.0])
 
 print("---------------------------------")
-print("------  Newton       -------")
+print("------  Diskreter Newton  -------")
 print("Startwert:", x0)
 print("Exaktes lokales Minimum ist der Punkt (0,0)")
 print("---------------------------------")
@@ -41,9 +37,8 @@ maxIter = 100
 
 # disp: Ausgaben oder nicht?
 result = optimize.minimize(f, x0,
-                           method="newton-cg",
+                           method="tnc",
                            jac=jacobi,
-                           hess=hesse,
                            options={'maxiter': maxIter,
                                     'xtol': 1e-5,
                                     'disp': False})
