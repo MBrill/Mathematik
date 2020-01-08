@@ -24,7 +24,8 @@ def jacobi(x) :
 # Startwert
 # In den Folien zu steepest descent hatten wir (0.5,0)
 # und als zweiten Startwert (0.5, 0.333)
-x0 = np.array([0.5, 1.0/3.0])
+#x0 = np.array([0.5, 1.0/3.0])
+x0 = np.array([0.5, 0.0])
 
 print("---------------------------------")
 print("------         TNC        -------")
