@@ -47,7 +47,20 @@ def aufgabe1b(t) :
     y = t3 + 1.0
     return x, y
 
-
+def unitCircle(t) :
+    """ Einheitskreis auf [0, 1]"""
+    x = np.cos(2.0*np.pi*t)
+    y = np.sin(2.0*np.pi*t)
+    return x, y
+    
+def circle(t, radius = 1.0) :
+    """ Einheitskreis auf [0, 1]"""
+    x = radius*np.cos(2.0*np.pi*t)
+    y = radius*np.sin(2.0*np.pi*t)
+    return x, y
+    
+    
+    
 def logSpiral(a, k, theta) :
     """ Logarithmische Spirale """
     r = a * np.exp(k*theta)
