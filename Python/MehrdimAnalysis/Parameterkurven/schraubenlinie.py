@@ -6,13 +6,13 @@ import space_curves
 
 fig = plt.figure()
 
-# Eigenschaften der Zykloide (Radius)
+# Eigenschaften der Schraubenlinie (Radius)
 radius = 1.0
 # Parameterintervall digitalisieren
 # Wie viele Samples?
 n = 10000
-t_min = -1.0#0
-t_max = 1.0#0.5*np.pi
+t_min = 0
+t_max = 0.5*np.pi
 t = np.linspace(t_min, t_max, n)
 
 # x, y und z-Koordinaten der Kurve berechnen

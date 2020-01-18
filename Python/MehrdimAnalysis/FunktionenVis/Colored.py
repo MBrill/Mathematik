@@ -9,7 +9,7 @@ Und nicht vergessen, den Dateinamen fuer die Bitmap zu veraendern!
 """
 import matplotlib.pyplot as plt
 from matplotlib import cm
-from mpl_toolkits.mplot3d import Axes3D
+#from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 fig = plt.figure()

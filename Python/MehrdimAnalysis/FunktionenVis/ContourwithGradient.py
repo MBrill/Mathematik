@@ -93,10 +93,15 @@ cbar.ax.get_yaxis().labelpad=15
 cbar.ax.set_ylabel('Konturwerte', rotation=270)
 #plt.title('Isolinien mit Labels')
 
+# Als erster Test einen Vektor ausgeben
+v = np.array([1,1])
+origin = [0], [0] 
+
+plt.quiver(*origin, [1, 1] , color='r', scale_units='xy', scale=20)
 # Plot abspeichern
 dpi = 300
 quality = 100
-plotfile = 'images/Contour.png'
+plotfile = 'Contour.png'
 
 plt.savefig(plotfile, 
             dpi = dpi, quality=quality)

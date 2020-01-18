@@ -6,7 +6,7 @@ Und nicht vergessen, den Dateinamen fuer die Bitmap zu veraendern!
 """
 import numpy as np
 import matplotlib.pyplot as plt
-#from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d import Axes3D
 
 import functions as fun
 
@@ -51,7 +51,6 @@ z = fun.ellParaboloid(x, y)
 #y = np.linspace(ymin, ymax, n)
 #x, y = np.meshgrid(x, y)
 #z = fun.rosenbrock(x, y)
->>>>>>> d8bd9072b60f261c64612722d25d466dfb70a711
 
 #
 linewidth = 0.8
