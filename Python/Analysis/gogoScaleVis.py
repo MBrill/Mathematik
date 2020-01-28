@@ -28,8 +28,6 @@ r3 = np.array([rMax, 1.2*rMax])
 f3 = np.array([fMax, fMax])
 #
 linewidth = 0.8
-dpi = 100
-quality = 100
 
 ax.plot(r1, r1, linewidth=linewidth, color = 'g')
 ax.plot(r2, f2, linewidth=linewidth, color = 'g')
