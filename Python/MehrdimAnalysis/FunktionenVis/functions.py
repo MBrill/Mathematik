@@ -41,3 +41,12 @@ def quadFunction(x, y) :
 def extremwertExample(x, y) :
     return -((x*x+y*y)*(x*x+y*y)) + x*x - y*y
     #return -(x**2+y**2)**2 + x*+2 - y**2
+
+"""Beispiel aus Bautista, Mathematics and Python Programming
+
+   Im Buch wird k = 0.03 verwendet!
+"""   
+def hypPara(k, x, y) :
+    return k*(x*x - y*y)
+    
+    
