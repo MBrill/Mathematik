@@ -9,21 +9,22 @@ ax = fig.add_subplot(111)
 
 # Elliptisches/hyperbolisches Paraboloid
 # Gitter in Zylinderkoordinaten
-r = np.arange(0, 4.0*np.pi, 0.1)
-t = np.arange(0, 8.0*np.pi, 0.2)
-r, t = np.meshgrid(r, t)
+#r = np.arange(0, 4.0*np.pi, 0.1)
+#t = np.arange(0, 8.0*np.pi, 0.2)
+#r, t = np.meshgrid(r, t)
 
 # Kartesische Koordinaten
-x = r*np.cos(t)
-y = r*np.sin(t)
+#x = r*np.cos(t)
+#y = r*np.sin(t)
 #z = fun.ellParaboloid(x, y)
-z = fun.hypParaboloid(x, y)
+#z = fun.hypParaboloid(x, y)
 
-#imshow-Beipiel
-#x = np.linspace(0, 1.0*np.pi, n)
-#y = np.linspace(0, 2.0*np.pi, n)
-#x, y = np.meshgrid(x, y)
-#z = -np.sin(x)*np.sin(y) 
+# sin(x) sin(y)
+n = 10
+x = np.linspace(0, 1.0*np.pi, n)
+y = np.linspace(0, 2.0*np.pi, n)
+x, y = np.meshgrid(x, y)
+z = fun.sinsin(x,y) 
 
 # Sombrero
 #n = 2000
@@ -61,7 +62,7 @@ cbar.ax.set_ylabel('Funktionswerte', rotation=270)
 # Plot abspeichern
 dpi = 100
 quality = 100
-plotfile = 'ColorGrid.png'
+plotfile = 'images/ColorGrid.png'
 
 plt.savefig(plotfile, 
             dpi = dpi, quality=quality)

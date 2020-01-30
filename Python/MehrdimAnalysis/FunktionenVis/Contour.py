@@ -1,8 +1,6 @@
 """
 Isolinien mit Hilfe der pyplot-Funktion contour.
 
-Code ist angelehnt an contour_demo.py
-
 Andere Funktion verwenden: die Berechnung der z-Werte anpassen
 Und nicht vergessen, den Dateinamen für die Bitmap zu verändern!
 """
@@ -82,7 +80,7 @@ Cstep = 0.2
 levels = np.arange(Cmin, Cmax, Cstep)
 cplot = ax.contour(x, y, z, levels=levels,
                    origin='lower',
-                   #colors=('blue', 'yellow', 'green', 'red'),
+                   colors=('blue', 'yellow', 'green', 'red'),
                    extent=(xmin, xmax, -ymin, ymax))
 
 # Die nächste Zeile kommentieren wenn wir keine Labels in 
@@ -90,8 +88,8 @@ cplot = ax.contour(x, y, z, levels=levels,
 #plt.clabel(cplot, inline=1, fontsize=12)
 cbar = plt.colorbar(cplot, shrink=0.8, extend='both')
 cbar.ax.get_yaxis().labelpad=15
-cbar.ax.set_ylabel('Konturwerte', rotation=270)
-#plt.title('Isolinien mit Labels')
+cbar.ax.set_ylabel('Funktionswerte', rotation=270)
+plt.title('Isolinien')
 
 # Plot abspeichern
 dpi = 300

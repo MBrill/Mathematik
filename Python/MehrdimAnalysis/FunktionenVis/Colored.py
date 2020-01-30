@@ -9,7 +9,6 @@ Und nicht vergessen, den Dateinamen fuer die Bitmap zu veraendern!
 """
 import matplotlib.pyplot as plt
 from matplotlib import cm
-#from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 fig = plt.figure()
@@ -38,15 +37,15 @@ import functions as fun
 
 
 # Beispiel für lokale Extrema aus der Vorlesung
-xmin = -0.85
-xmax = 0.85
-ymin = -0.85
-ymax = 0.85
-n=800
-x = np.linspace(xmin, xmax, n)
-y = np.linspace(ymin, ymax, n)
-x, y = np.meshgrid(x, y)
-z = fun.extremwertExample(x, y)
+#xmin = -0.85
+#xmax = 0.85
+#ymin = -0.85
+#ymax = 0.85
+#n=800
+#x = np.linspace(xmin, xmax, n)
+#y = np.linspace(ymin, ymax, n)
+#x, y = np.meshgrid(x, y)
+#z = fun.extremwertExample(x, y)
 
 # Sombrero
 #n = 500
@@ -57,14 +56,20 @@ z = fun.extremwertExample(x, y)
 #frequency = 6.0
 #z = fun.sombrero(x, y, frequency)
 
+# sinsin
+x = np.linspace(0, 1.0*np.pi, 200)
+y = np.linspace(0, 2.0*np.pi, 200)
+x, y = np.meshgrid(x, y)
+z = fun.sinsin(x, y)
+
 style = 'seaborn'
 plt.style.use(style)
 surf = ax.plot_surface(x, y, z,  
                 alpha=0.9, 
                 rstride=10, cstride=10, 
                 linewidth=0.5,
-                #cmap=cm.Oranges)
-                cmap=cm.coolwarm)
+                cmap=cm.Oranges)
+                #cmap=cm.coolwarm)
 
 cbar = fig.colorbar(surf, shrink=0.5)
 cbar.ax.get_yaxis().labelpad=15
@@ -73,7 +78,7 @@ cbar.ax.set_ylabel('Funktionswerte', rotation=270)
 # Plot abspeichern
 dpi = 100
 quality = 100
-plotfile = 'Colored.png'
+plotfile = 'sinsinColored.png'
 
 plt.savefig(plotfile, 
             dpi = dpi, quality=quality)
