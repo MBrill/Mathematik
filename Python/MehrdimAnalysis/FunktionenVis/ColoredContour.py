@@ -92,7 +92,7 @@ cbar.ax.set_ylabel('Funktionswerte', rotation=270)
 # Plot abspeichern
 dpi = 100
 quality = 100
-plotfile = 'ColoredContour.png'
+plotfile = 'images/ColoredContour.png'
 
 plt.savefig(plotfile, 
             dpi = dpi, quality=quality)

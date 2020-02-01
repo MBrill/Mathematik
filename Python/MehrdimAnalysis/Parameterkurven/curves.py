@@ -2,6 +2,9 @@
    Planare Parameterkurven 
 
    Return-Werte werden als Tupel erzeugt 
+   
+   Beispiel:
+   x, y = cycloid(1.0, 90.0)
 """
 import numpy as np
 
