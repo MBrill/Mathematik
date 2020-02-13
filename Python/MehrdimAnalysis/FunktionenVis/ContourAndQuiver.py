@@ -35,7 +35,7 @@ Cstep = 50.0
 levels = np.arange(Cmin, Cmax, Cstep)
 cplot = ax.contour(x, y, z, levels=levels,
                    origin='lower',
-                   cmap=cm.coolwarm,
+                   cmap=cm.rainbow,
                    extent=(xmin, xmax, -ymin, ymax))
 
 # Die nächste Zeile kommentieren wenn wir keine Labels in 

@@ -8,7 +8,7 @@
 """
 import numpy as np
 
-
+# Ebene Parameterkurven
 def cycloid(radius, theta) :
     """Zykloide """
     x = radius*(theta - np.sin(theta))
@@ -62,8 +62,18 @@ def circle(t, radius = 1.0) :
     y = radius*np.sin(2.0*np.pi*t)
     return x, y
     
-    
-    
+def ellipse(t, a = 1.0, b = 1.0) :
+    """ Einheitskreis auf [0, 1]"""
+    x = a*np.cos(2.0*np.pi*t)
+    y = b*np.sin(2.0*np.pi*t)
+    return x, y
+
+def semicubicParabola(t):
+    """ Semikubische Parabel """
+    x = t*t
+    y = x*t
+    return x, y
+     
 def logSpiral(a, k, theta) :
     """ Logarithmische Spirale """
     r = a * np.exp(k*theta)
@@ -71,7 +81,7 @@ def logSpiral(a, k, theta) :
     y = r * np.sin(theta)
     return x, y
 
-
+# Raumkurven
 def archimedeanSpiral(k, theta) :
     """ Archimedische Spirale """
     r = k * theta
