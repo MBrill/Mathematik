@@ -17,8 +17,8 @@ public class FirstApacheRandom {
 		double val = generator.nextUniform(0.0,  1.0);
 		System.out.println("Eine Zufallszahl im Einheitsintervall " + val);
 		
-		// 10 zufällige WÃ¼rfelergebnisse ...
-		System.out.println("Wir erzeugen 10 zufällige Würfel-Ergebnisse!");
+		// 10 zufï¿½llige WÃ¼rfelergebnisse ...
+		System.out.println("Wir erzeugen 10 zufï¿½llige WÃ¼rfel-Ergebnisse!");
 		for (i=0; i<10; i++) {
 			d = generator.nextInt(1, 6);
 			System.out.print(d + " ");

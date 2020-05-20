@@ -88,3 +88,42 @@ def archimedeanSpiral(k, theta) :
     x = r * np.cos(theta)
     y = r * np.sin(theta)
     return x, y
+
+# Berechnung von Bogenlänge und Bogenlängenfunktionen
+def polylineLength(x, y) :
+    """Bogenlänge berechnen mit Hilfe eines 
+    übergebenen Polygonzugs
+    """       
+    sum = 0.0
+    for i in range(0, x.size-1) :
+        sum += np.sqrt((x[i+1] - x[i])**2 + (y[i+1]-y[i])**2)
+    return sum
+  
+def arcL(curve, a = 0.0, b = 1.0, n = 100) :
+    """Bogenlänge mit übergebener Kurve
+       und Anzahl der Punkte, die für die Näherung
+       verwendet werden soll.
+    """
+    t = np.linspace(a, b, n)
+    x, y = curve(t)
+    return polylineLength(x, y)
+
+def arcLengthFunction(curve, a=0.0, b=1.0, n=100) :
+    """Berechnung von Werten der Bogenlängenfunktion
+       
+       curve: Funktion, die die untersuchte Parameterfunktion auswertet
+       a, b: Parameterintervall, für das die Werte der Bogenlängenfunktion
+             berechnet werden soll.
+       n:    Anzahl der Wertepaare, die berechnet werden sollen.
+       
+       Rückgabewert der Funktion: Wertetabelle (t, S_a(t))
+    """
+    t = np.linspace(a, b, n)
+    x, y = curve(t)
+    sct = np.zeros(shape=n, dtype=float)
+    sum=0.0
+    for i in range(0, n-1) :
+        sum += np.sqrt((x[i+1] - x[i])**2 + (y[i+1]-y[i])**2)
+        sct[i+1]=sum
+        
+    return t, sct

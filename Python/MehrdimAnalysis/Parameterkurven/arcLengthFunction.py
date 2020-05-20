@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Näherungen der Bogenlänge
+Bogenlängenfunktionen für ebene Parameterkurven
 """
 import numpy as np
 import curves
