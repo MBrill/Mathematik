@@ -10,14 +10,14 @@ public class TafelExperiment {
 		// Wir verwenden eine Tafel mit linker unterer Ecke (0,0), rechte
 		// obere Ecke (2,1). A liegt bei x zwischen
 		// (0.5, 1.5), in y zwischen 0.5 und 1.0.
-		// Die exakte Fläche für A ist dann gegeben als 0.5.
+		// Die exakte FlÃ¤che fÃ¼r A ist dann gegeben als 0.5.
 		int i, n = 100000000, h=0;
 		double x, y, 
 			   area = areaOfA(xmin, xmax, ymin, ymax),
 			   hK, a, delta,  
 		       nD = (double)n;
 		
-		System.out.println("Bestimmung einer Rechtsecksfläche mit Hilfe einer Monte-Carlo Simulation");
+		System.out.println("Bestimmung einer RechtsecksflÃ¤che mit Hilfe einer Monte-Carlo Simulation");
 		System.out.println("Wir beginnnen mit der Simulation!");
 		System.out.println("Wir werfen " + n + "-mal!");
 		System.out.println("Bitte etwas Geduld!");
@@ -35,20 +35,20 @@ public class TafelExperiment {
 		delta = Math.abs(area - a);
 		
 		System.out.println("Das Ergebnis unseres Monte-Carlo Experiments\n");	
-		System.out.println("Das Verhältnis zwischen der exakten Fläche von A und der Tafel ist " + area/2.0);
-		System.out.println("Die relative Häufigkeit der Treffer in unserer Fläche A ist " + hK);
-		System.out.println("Der exakte Wert für die Fläche von A ist " + area);
-		System.out.println("Unsere Schätzung für die Fläche A ist " + a);
-		System.out.println("Der absolute Fehler zwischen der Fläche und unserer Schätzung ist " + delta);
+		System.out.println("Das VerhÃ¤ltnis zwischen der exakten FlÃ¤che von A und der Tafel ist " + area/2.0);
+		System.out.println("Die relative HÃ¤ufigkeit der Treffer in unserer FlÃ¤che A ist " + hK);
+		System.out.println("Der exakte Wert fÃ¼r die FlÃ¤che von A ist " + area);
+		System.out.println("Unsere SchÃ¤tzung fÃ¼r die FlÃ¤che A ist " + a);
+		System.out.println("Der absolute Fehler zwischen der FlÃ¤che und unserer SchÃ¤tzung ist " + delta);
 	}
 	
 	/** 
-	 * Entscheidung, ob ein Punkt im  Einheitskreis liegt 
+	 * Entscheidung, ob ein Punkt im Rechteck liegt 
 	 * 
-	 * @param x x-Koordinate des Punkts, der überprüft wird
-     * @param y y-Koordinate des Punkts, der überprüft wird	 
+	 * @param x x-Koordinate des Punkts, der Ã¼berprÃ¼ft wird
+     * @param y y-Koordinate des Punkts, der Ã¼berprÃ¼ft wird	 
      * 
-     * @return true, falls der Punkt im Einheitskreis liegt
+     * @return true, falls der Punkt im Rechteck liegt
 	 */
 	private static boolean inArea(double x, double y)
 	{
@@ -56,7 +56,7 @@ public class TafelExperiment {
 	}	
 	
 	/**
-	 * Berechnung der gesuchten Fläche
+	 * Berechnung der gesuchten FlÃ¤che
 	 * 
 	 * @param xmin minimaler x-Wert des Rechtecks A
 	 * @param xmax maximaler x-Wert des Rechtecks A
@@ -70,8 +70,8 @@ public class TafelExperiment {
 	}
 	
 	/**
-	 * Daten für die Fläche A
+	 * Daten fï¿½r die Flï¿½Ã¤he A
 	 */
 	private static double xmin=0.5, xmax=1.5, 
-		                    ymin=0.5, ymax=1.0;
+		                  ymin=0.5, ymax=1.0;
 }

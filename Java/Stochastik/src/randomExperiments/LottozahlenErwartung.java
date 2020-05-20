@@ -2,7 +2,7 @@ import org.apache.commons.math3.random.RandomDataGenerator;
 import org.apache.commons.math3.random.Well44497a;
 
 /**
- * Simulation von 1000 Lotto-Ziehungen und zählen, wie häufig eine Zahl, beispielsweise 42,
+ * Simulation von 1000 Lotto-Ziehungen und zÃ¤hlen, wie hÃ¤ufig eine Zahl, beispielsweise 42,
  * gezogen wird.
  */
 public class LottozahlenErwartung {
@@ -16,7 +16,7 @@ public class LottozahlenErwartung {
 		// Variablen
 		int i, j, number=42;
 		
-		// Daten für die Lotto-Simulation
+		// Daten fï¿½r die Lotto-Simulation
 		int n=49, m = 6;
 		int[] ziehung = new int[m],
 			  statistik = new int[n];
@@ -27,9 +27,9 @@ public class LottozahlenErwartung {
 		System.out.println("Simulation von Lotto 6 aus 49");
 		System.out.println("Zufallszahlengenerator: Well44497a aus der Apache Commons Math");
 		System.out.println("Wir simulieren jetzt " + max + " Lottoziehungen!");
-		System.out.println("Bitte etwas Geduld!");
+		System.out.println("Bitte haben Sie etwas Geduld!");
 		System.out.println("Sobald die Simulation beendet ist erfolgt wieder eine Ausgabe auf der Konsole!");
-		// Simulieren und die Häufigkeiten kumulieren
+		// Simulieren und die HÃ¤ufigkeiten kumulieren
 		for (i=0; i<max; i++) {
 			ziehung = generator.nextPermutation(n, m);
 			for (j=0; j<m; j++) {
@@ -38,14 +38,14 @@ public class LottozahlenErwartung {
 		}		
 		System.out.println("Die Simulation ist beendet!\n\n");
 		    
-	    // Vergleichszahlen und Variable für die Schätzung der Wahrscheinlichkeit
+	    // Vergleichszahlen und Variable fï¿½r die SchÃ¤tzung der Wahrscheinlichkeit
 	    double erwartet = (6.0/49.0); 
 	    int erwartetFrequ = (int)(erwartet*max);
 	    double computed = (double)statistik[number-1]/(double)max;
 	    
-	    System.out.println("Die Häufigkeit für die Zahl " + number + " ist " + statistik[number-1]);
-	    System.out.println("Die erwartete Häufigkeit für die Zahl " + number + " ist " + erwartetFrequ);	    
-	    System.out.println("Der durch die Simulation geschätzte Wert für die Wahrscheinlichkeit ist " + computed);
-	    System.out.println("Der erwartete Wert für die Wahrscheinlichkeit ist " + erwartet);
+	    System.out.println("Die HÃ¤ufigkeit fï¿½r die Zahl " + number + " ist " + statistik[number-1]);
+	    System.out.println("Die erwartete absolute HÃ¤ufigkeit fï¿½r die Zahl " + number + " ist " + erwartetFrequ);	    
+	    System.out.println("Der durch die Simulation geschÃ¤tzte Wert fÃ¼r die Wahrscheinlichkeit ist " + computed);
+	    System.out.println("Der erwartete Wert fï¿½r die Wahrscheinlichkeit ist " + erwartet);
 	}
 }

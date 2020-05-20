@@ -1,15 +1,15 @@
 /**
- * Abstrakte Basisklasse für die Experimente mit verschiedenen Zufallszahlengeneratoren
- * und dem zufallsexperiment "Werfen einer fairen Münze".
+ * Abstrakte Basisklasse fï¿½r die Experimente mit verschiedenen Zufallszahlengeneratoren
+ * und dem zufallsexperiment "Werfen einer fairen Mï¿½nze".
  */
 abstract public class ThrowCoinAbstract {
 	
 	/** Konstruktor */
 	public ThrowCoinAbstract() {}
 	
-	/** Funktion für die Simulation eines Würfels.
+	/** Funktion fÃ¼r die Simulation eines WÃ¼rfels.
 	 *  
-	 *  @return Summe der beiden Würfel
+	 *  @return Summe der beiden WÃ¼rfel
 	 */
 	abstract public int throwCoin();
 }

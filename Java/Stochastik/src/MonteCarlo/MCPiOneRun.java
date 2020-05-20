@@ -1,5 +1,5 @@
 /**
- * Monte-Carlo Methode zur Bestimmung von pi
+ * Monte-Carlo Methode zur Bestimmung von Nachkommastellen der irrationalen Zahl pi.
  * 
  * <p>Wir verwenden einen großen Wert für n und führen
  * das Monte-Carlo Experiment damit aus.

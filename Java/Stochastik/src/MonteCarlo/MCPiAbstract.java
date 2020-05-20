@@ -1,5 +1,5 @@
 /**
- * Basisklasse für Monte-Carlo Methoden zur Bestimmung von pi
+ * Basisklasse für Monte-Carlo Methoden zur Bestimmung von Nachkommastellen der irrationalen Zahl pi.
  */
 abstract public class MCPiAbstract 
 {

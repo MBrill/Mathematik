@@ -1,7 +1,7 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
 
 /**
- * Realisierung des Zufallsexperiments "zweimal würfeln und Augensumme bilden"
+ * Realisierung des Zufallsexperiments "zweimal wÃ¼rfeln und Augensumme bilden"
  * mit einer Instanz eines Mersenne Twisters aus der Apache Commons Math API.
  */
 public class TwoDiesTwister extends TwoDiesAbstract {

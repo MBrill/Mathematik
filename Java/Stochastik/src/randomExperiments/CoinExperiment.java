@@ -1,12 +1,11 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
 import org.apache.commons.math3.random.MersenneTwister;
 
-
 /**
- * Experiment Münzwurf.
+ * Experiment MÃ¼nzwurf.
  * 
- * Das Experiment wird zweimal ausgeführt. Einmal mit einer Instanz von
- * Math.Random, und einmal mit einer Instanz eines MersenneTwisters
+ * Das Experiment wird zweimal ausgefÃ¼hrt. Einmal mit einer Instanz von
+ * Math.Random, und einmal mit einer Instanz eines Mersenne-Twisters
  * aus der Apache Common Math API.
  */
 public class CoinExperiment 
@@ -25,45 +24,45 @@ public class CoinExperiment
         ThrowCoinTwister experiment2 = new ThrowCoinTwister(genTwist);
         
 		int i;
-		// Wir oft wollen wir jeweils eine Münze werfen?
+		// Wir oft wollen wir jeweils eine Mï¿½nze werfen?
 		final int n=100000;
 		
-		System.out.println("Wir simulieren Münzwürfe mit Math.Random!");
+		System.out.println("Wir simulieren MÃ¼nzwÃ¼rfe mit Math.Random!");
 		for (i=0; i<n; i++) 
 			counter(experiment1.throwCoin());
 		
 		// Statistik ausgeben
 		System.out.println("\n");		
-		System.out.println("Ergebnisse für Math.Random");
+		System.out.println("Ergebnisse fÃ¼r Math.Random");
 		System.out.println("-----------------------------------");
 		printResults(n);
 
-		// Counter zurücksetzen für das zweite Experiment
+		// Counter zurÃ¼cksetzen fÃ¼r das zweite Experiment
 		countWappen=0;
 		countZahl=0;
 		
 		System.out.println("\n");
-		System.out.println("Wir simulieren Münzwürfe mit dem Mersenne-Twister!");
+		System.out.println("Wir simulieren MÃ¼nzwÃ¼rfe mit dem Mersenne-Twister!");
 		for (i=0; i<n; i++) 
 			counter(experiment2.throwCoin());
 		
 		// Statistik ausgeben
 		System.out.println("\n");
-		System.out.println("Ergebnisse für den Mersenne-Twister");
+		System.out.println("Ergebnisse fÃ¼r den Mersenne-Twister");
 		System.out.println("-----------------------------------");
 		printResults(n);
 	}
 
-	/** Variable für die absolute Häufigkeit für Wappen */
+	/** Variable fï¿½r die absolute HÃ¤ufigkeit fï¿½r Wappen */
 	private static int countWappen=0;
-	/** Variable für die absolute Häufigkeit für Wappen */	
+	/** Variable fÃ¼r die absolute Hï¿½ufigkeit fÃ¼r Wappen */	
 	private static int countZahl=0;
 	
 	/**
 	 * Erfassen der Ergebnisse auf zwei Variablen
 	 * 
-	 * Die Funktion zählt die beiden Counter hoch. Es wird
-	 * *nicht* überprüft, ob ergebnis nicht 0 ode 1 ist!
+	 * Die Funktion zÃ¤hlt die beiden Counter hoch. Es wird
+	 * <b>nicht</b> Ã¼Ã¼erprÃ¼ft, ob ergebnis nicht 0 oder 1 ist!
 	 * Alle Eingaben ungleich 0 werden als Zahl interpretiert!
 	 * 
 	 * @param ergebnis Wappen (=0) oder Zahl (=1)?
@@ -77,22 +76,21 @@ public class CoinExperiment
 	}
 	
 	/**
-	 * Ausgabe der absoluten Häufigkeiten als csv-Liste, mit Trenner Semikolon.
+	 * Ausgabe der absoluten HÃ¤ufigkeiten als csv-Liste, mit Trenner Semikolon.
 	 * 
-	 * Die erste ausgegebene absolute Häufigkeit ist die Anzahl der Wappen, die zweite die Anzahl für Zahl.
+	 * Die erste ausgegebene absolute HÃ¤ufigkeit ist die Anzahl der Wappen, die zweite die Anzahl fÃ¼r Zahl.
 	 * 
-	 * @param n Anzahl der Experimente für die Berechnung der relativen Häufigkeiten
+	 * @param n Anzahl der Experimente fÃ¼r die Berechnung der relativen HÃ¤ufigkeiten
 	 */
 	private static void printResults(int n) 
 	{	
-		System.out.println("Es wurden " + n + " Simulationen durchgeführt!");
-		System.out.println("Ausgabe der absoluten Häufigkeiten Wappen/Zahl als csv, Semikolon ist der Trenner.");
+		System.out.println("Es wurden " + n + " Simulationen durchgefÃ¼hrt!");
+		System.out.println("Ausgabe der absoluten HÃ¤ufigkeiten Wappen/Zahl als csv, Semikolon ist der Trenner");
 		System.out.println(countWappen + ";" + countZahl);
-		System.out.println("Ausgabe der relativen Häufigkeiten Wappen/Zahl als csv, Semikolon ist der Trenner.");
+		System.out.println("Ausgabe der relativen HÃ¤ufigkeiten Wappen/Zahl als csv, Semikolon ist der Trenner");
 		System.out.println((double)countWappen/n + ";" + (double)countZahl/n);
-		System.out.println("Abweichungen Wappen/Zahl von der theoretischen relativen Häufigkeit 0.5 als csv, Semikolon ist der Trenner.");
+		System.out.println("Abweichungen Wappen/Zahl von der theoretischen relativen HÃ¤ufigkeit 0.5 als csv, Semikolon ist der Trenner");
 		System.out.println(Math.abs((double)countWappen/n-0.5) + ";" + Math.abs((double)countZahl/n-0.5));		
 		
 	}
-
 }

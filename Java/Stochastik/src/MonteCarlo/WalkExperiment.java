@@ -30,13 +30,13 @@ public class WalkExperiment
         		                                   xH, yH, 
         		                                   max);
         		       
-        // Wir führen das Experiment durch
+        // Wir fï¿½hren das Experiment durch
 		int numberOfRuns = 10000000, N=100;
 		double counter = 0.0, means = 0.0;
 		
 		System.out.println("Wir simulieren den Random Walk");
 		System.out.println("Der Zielpunkt ist (" + xH + "," + yH + ")");
-		System.out.println("Wir führen das Experiment " + N + "-mal durch.");
+		System.out.println("Wir fÃ¼hren das Experiment " + N + "-mal durch.");
 		System.out.println("Jedes Experiment testet den Zielpunkt " + numberOfRuns + "-mal");
 		System.out.println("Bitte etwas Geduld!");
 		
@@ -59,5 +59,4 @@ public class WalkExperiment
 		                    means);
 		
 	}
-
 }

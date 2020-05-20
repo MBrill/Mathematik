@@ -1,7 +1,7 @@
 import java.util.Random;
 
 /**
- * Realisierung des Zufallsexperiments "Werfen einer fairen Münze"
+ * Realisierung des Zufallsexperiments "Werfen einer fairen MÃ¼nze"
  * mit einer Instanz von Math.Random.
  */
 public class ThrowCoinRandom extends ThrowCoinAbstract {

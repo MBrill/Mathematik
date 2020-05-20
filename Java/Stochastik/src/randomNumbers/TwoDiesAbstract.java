@@ -1,15 +1,15 @@
 /**
- * Abstrakte Basisklasse für die Experimente mit verschiedenen Zufallszahlengeneratoren
- * und dem zufallsexperiment "Augensumme bei zweimaligem Würfeln".
+ * Abstrakte Basisklasse fï¿½r die Experimente mit verschiedenen Zufallszahlengeneratoren
+ * und dem zufallsexperiment "Augensumme bei zweimaligem WÃ¼rfeln".
  */
 abstract public class TwoDiesAbstract {
 	
 	/** Konstruktor */
 	public TwoDiesAbstract() {}
 	
-	/** Funktion für die Simulation eines Würfels.
+	/** Funktion fÃ¼r die Simulation eines WÃ¼rfels.
 	 *  
-	 *  @return Summe der beiden Würfel
+	 *  @return Summe der beiden WÃ¼rfel
 	 */
 	abstract public int throwDies();
 }

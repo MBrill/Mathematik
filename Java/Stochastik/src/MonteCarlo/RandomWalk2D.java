@@ -113,11 +113,11 @@ public class RandomWalk2D {
 	}
 
 	/**
-	 * Die Simulation durchführen.
+	 * Die Simulation durchfï¿½hren.
 	 * 
 	 * Wir haben mehrere Abbruchkriterien.
 	 * Einmal, ob wir unser Ziel erreicht haben.
-	 * Und dann noch die beiden Abbrüche, wenn wir den Bereich verlassen
+	 * Und dann noch die beiden Abbrï¿½che, wenn wir den Bereich verlassen
 	 * oder wenn wir die maximale Anzahl der Iterationen erreicht haben.
 	 * 
 	 * @return true Das Ziel wurde erreicht
@@ -165,7 +165,7 @@ public class RandomWalk2D {
 		return yPosition;
 	}	
 	/**
-	 * Überprüfung, ob die aktuelle Position mit dem Ziel übereinstimmt.
+	 * ï¿½berprï¿½fung, ob die aktuelle Position mit dem Ziel ï¿½bereinstimmt.
 	 * 
 	 * @return true falls wir das Ziel erreicht haben
 	 *        false sonst.
@@ -186,12 +186,13 @@ public class RandomWalk2D {
 		else
 			return false;
 	}
+	
 	/**
 	 * Einen Schritt durchfÃ¼hren.
 	 * 
 	 * <p>Jede der vier Richtungen ist gleich wahrscheinlich. Die
 	 * Entscheidung, welche Richtung verwendet wird ist eine zufÃ¤llige
-	 * Entscheidung, die mit Hilfe eines Mersenne Twisters gefällt wird.
+	 * Entscheidung, die mit Hilfe eines Mersenne Twisters gefï¿½llt wird.
 	 */
 	private void makeAStep()
 	{
@@ -226,7 +227,7 @@ public class RandomWalk2D {
 		}
 	}
 	/**
-	 * Ãœberprüfen, ob eine Position innerhalb des Bereichs liegt.
+	 * Ãœberprï¿½fen, ob eine Position innerhalb des Bereichs liegt.
 	 * 
 	 * @return true Position ist ok		
 	 */

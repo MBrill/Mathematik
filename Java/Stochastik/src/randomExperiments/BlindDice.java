@@ -1,28 +1,28 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
 
 /**
- * Realisierung eines blinden Würfels nach Haller unr Barth
+ * Realisierung eines blinden Wï¿½rfels nach Haller unr Barth
  * 
- * Ein blinder Würfel ist ein Würfel, der fünf leere, blinde, Seiten hat.
+ * Ein blinder Wï¿½rfel ist ein Wï¿½rfel, der fï¿½nf leere, blinde, Seiten hat.
  * Auf einer Seite steht ein Auge, entweder eine 1, eine 2 bis zu einer 6.
- * Die Wahrscheinlichkeit für jede der Seiten ist gleich. Also haben wir eine
- * Wahrscheinlichkeit von 5/6, eine Augenzahl von 0 zu würfeln, und eine
- * Wahrscheinclichkeit von 1/6 für die nicht-blinde Seite.
+ * Die Wahrscheinlichkeit fï¿½r jede der Seiten ist gleich. Also haben wir eine
+ * Wahrscheinlichkeit von 5/6, eine Augenzahl von 0 zu wï¿½rfeln, und eine
+ * Wahrscheinclichkeit von 1/6 fï¿½r die nicht-blinde Seite.
  * 
- * In einem Spiel werden insgesamt 6 solcher blinder Würfel verwendet, jeweils
- * mit einer der möglichen Augenzahlen.
+ * In einem Spiel werden insgesamt 6 solcher blinder Wï¿½rfel verwendet, jeweils
+ * mit einer der mï¿½glichen Augenzahlen.
  */
 public class BlindDice {
 
 	/** Default-Konstruktor
 	 *  
-	 *  Als Default wird ein blinder Würfel erzeugt, der
+	 *  Als Default wird ein blinder Wï¿½rfel erzeugt, der
 	 *  eine 1 auf der einen Seite aufweist. 
 	 *  
-	 *  Die Wahrscheinlichkeit, die nicht-blinde Seite zu würfeln
+	 *  Die Wahrscheinlichkeit, die nicht-blinde Seite zu wï¿½rfeln
 	 *  ist 1/6.
 	 *  
-	 *  Es wird kein Generator übergeben, so dass der Würfel noch nicht
+	 *  Es wird kein Generator ï¿½bergeben, so dass der Wï¿½rfel noch nicht
 	 *  geworfen werden kann.
 	 */
 	private BlindDice() 
@@ -33,17 +33,17 @@ public class BlindDice {
 
 	/** Konstruktor mit einer Augenzahl
 	 *  
-	 *  Ein blinder Würfel mit n als Augenzahl. 
+	 *  Ein blinder Wï¿½rfel mit n als Augenzahl. 
 	 *  
-	 *  Die Wahrscheinlichkeit, die nicht-blinde Seite zu würfeln
+	 *  Die Wahrscheinlichkeit, die nicht-blinde Seite zu wï¿½rfeln
 	 *  ist 1/6.
 	 *  
-	 *  @param n Augenzahl für die nicht-blinden Seite. Wird nicht eine Zahl zwischen 1 und 6 übergeben wird die Augenzahl auf 1 gesetzt.
+	 *  @param n Augenzahl fï¿½r die nicht-blinden Seite. Wird nicht eine Zahl zwischen 1 und 6 ï¿½bergeben wird die Augenzahl auf 1 gesetzt.
 		
 	/**
-	 * Abfragen, mit Welcher Wahrscheinlichkeit ein Auge zurückgeliefert wird
+	 * Abfragen, mit Welcher Wahrscheinlichkeit ein Auge zurï¿½ckgeliefert wird
 	 * 
-	 * @return Wahrscheinlichkeit für die Erzeugung des nicht-blinden Auges
+	 * @return Wahrscheinlichkeit fï¿½r die Erzeugung des nicht-blinden Auges
 	 */
 	public double getP()
 	{
@@ -65,7 +65,7 @@ public class BlindDice {
 	}
 	
 	/** 
-	 * Wir werfen den blinden Würfel
+	 * Wir werfen den blinden WÃ¼rfel
 	 * 
 	 * Wir verwenden eine Binomialverteilung mit Erfolgswahrscheinlichkeit p.
 	 * 	  
@@ -87,13 +87,13 @@ public class BlindDice {
 	}
 	
 	
-	/** Welche Augenzahl wird auf der einen Seite verwendet? 
-	 * 
+	/** 
+	 * Welche Augenzahl wird auf der einen Seite verwendet? 
 	 */
 	private int eye;
 	
 	/** 
-	 * Mit welcher Wahrscheinlichkeit wird die nicht-blinde Seite gewürfelt? 
+	 * Mit welcher Wahrscheinlichkeit wird die nicht-blinde Seite gewï¿½rfelt? 
 	 */
 	private double p;
 	
@@ -101,5 +101,4 @@ public class BlindDice {
 	 * Instanz des Generators 
 	 */
 	private RandomDataGenerator generator;	
-
 }

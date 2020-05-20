@@ -5,7 +5,7 @@ import org.apache.commons.math3.random.MersenneTwister;
 import org.apache.commons.math3.random.ValueServer;
 
 /**
- * Simulation eines "gezinkten" Würfels mit der Klasse ValueServer
+ * Simulation eines "gezinkten" WÃ¼rfels mit der Klasse ValueServer
  * der Apache Commons Math
  */
 public class Loaded {
@@ -15,7 +15,7 @@ public class Loaded {
 		MersenneTwister twister = new MersenneTwister();	
 		ValueServer server = new ValueServer(twister);
 		
-		System.out.println("Ein Würfel auf der Basis von Häufigkeiten in der Datei loadedData.txt");
+		System.out.println("Ein WÃ¼rfel auf der Basis von HÃ¤ufigkeiten in der Datei loadedData.txt");
 		try {
 			  server.setValuesFileURL(new File("loadedData.txt").toURI().toURL());
 	    } catch (IOException e) {
@@ -34,7 +34,7 @@ public class Loaded {
 	    finally {}	
 		
 		// Zufallszahlen erzeugen und ausgeben
-		System.out.println("2. Mit der erstellten Verteilung werden jetzt 10 zufällige Würfelergebnisse erzeugt:");
+		System.out.println("2. Mit der erstellten Verteilung werden jetzt 10 zufÃ¤llige WÃ¼rfelergebnisse erzeugt:");
 		double value;
 		try {
 			for (int i=0; i<10; i++)
@@ -48,5 +48,3 @@ public class Loaded {
 	    finally {}	
 	}
 }
-
-

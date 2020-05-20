@@ -1,7 +1,7 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
 
 /**
- * Realisierung des Zufallsexperiments "Werfen einer fairen Münze"
+ * Realisierung des Zufallsexperiments "Werfen einer fairen MÃ¼nze"
  * mit einer Instanz eines Mersenne Twisters aus der Apache Commons Math API.
  */
 public class ThrowCoinTwister extends ThrowCoinAbstract {

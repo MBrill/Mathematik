@@ -5,6 +5,14 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
 import org.apache.commons.math3.random.Well44497a;
 
+/**
+ * Simulation einer Warteschlange in einer PKW-Werkstatt.
+ * 
+ * Wir verwenden daf√ºr die geometrische Verteilung und
+ * einen Zufallszahlengenerator aus commons.math3.
+ * 
+ * @author Manfred Brill
+ */
 public class PKWSimulation {
 
 	public static void main(String[] args) {
@@ -27,7 +35,7 @@ public class PKWSimulation {
 		for (i=0; i<n; i++)
 			values[i] = generator.nextExponential(mean);
 		
-		// Grˆﬂen, um Mittelwert und empirische Varianz zu berechnen ...
+		// GrÔøΩÔøΩen, um Mittelwert und empirische Varianz zu berechnen ...
 		double average, variance, stddev;		
 		System.out.println("Die Daten sind jetzt erzeugt worden, wir beginnen mit der Analyse!");		
 		// Daten analysieren

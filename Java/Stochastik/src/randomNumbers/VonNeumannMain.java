@@ -1,34 +1,34 @@
 /**
- * Hauptprogramm für die Untersuchung der Mid-Square Methode
+ * Hauptprogramm fÃ¼r die Untersuchung der Mid-Square Methode
  * Diese Methode selbst ist in der Klasse VonNeumann implementiert.
  */
 public class VonNeumannMain 
 {
 	public static void main(String[] args) {
 		int i,  value, counter, seed;
-		// Variable für die Zyklenlänge für jeden Startwert
+		// Variable fÃ¼r die ZyklenlÃ¤nge fÃ¼r jeden Startwert
 		int[] cycles = new int[100];
-		// Variable für den Stopwert, um zu untersuchen, mit welchem Wert die Folge stoppt.
+		// Variable fÃ¼r den Stopwert, um zu untersuchen, mit welchem Wert die Folge stoppt.
 		int[] stopValue = new int[100];
 
-		// Matrix für die Ausgabe der einzelnen Folgen
-		// Der längste Zyklus ist durch 15 Zahlen gegeben ...
+		// Matrix fÃ¼r die Ausgabe der einzelnen Folgen
+		// Der lÃ¤ngste Zyklus ist durch 15 Zahlen gegeben ...
 		int[][] sequences = new int[100][15];
-		// Implementierung der Mid-Square Methode für zweistellige Dezimalzahlen
+		// Implementierung der Mid-Square Methode fÃ¼r zweistellige Dezimalzahlen
 		VonNeumann mid = new VonNeumann();
-		// Hash für die Entscheidung, ob ein Zyklus erreicht wurde
+		// Hash fÃ¼r die Entscheidung, ob ein Zyklus erreicht wurde
 		boolean stop = false;
 		boolean[] hash = new boolean[100];
 		for (i=0; i<100; i++)
 			hash[i] = false;
 		
-		// Jetzt führen wir das Experiment durch
+		// Jetzt fÃ¼hren wir das Experiment durch
 		for (seed=0; seed<100; seed++) {
             // Alle Startwerte durchlaufen
 			mid.setSeed(seed);
 			// Alle Variablen zurÃ¼cksetzen
 			counter = 0;
-		    // hash zurücksetzen
+		    // hash zurÃ¼cksetzen
 			for (i=0; i<100; i++)
 				hash[i] = false;
 			stop = false;
@@ -46,7 +46,7 @@ public class VonNeumannMain
 		    		stop = true;
 		    	}
 		    } // end while
-		    // Länge des Zyklus speichern
+		    // LÃ¤nge des Zyklus speichern
 		    cycles[seed] = counter;
 		}
 		
@@ -58,16 +58,16 @@ public class VonNeumannMain
 				max = seed;
 		}
 		
-		// Die absoluten Häufigkeiten bestimmen, mit denen die einzelnen Stopwerte auftreten
-		// Variable, mit der wir die Häufigkeiten für diese Stopwerte
-		// Es gibt die folgenden Möglichkeiten, an denen ein Zyklus stoppt:
+		// Die absoluten HÃ¤ufigkeiten bestimmen, mit denen die einzelnen Stopwerte auftreten
+		// Variable, mit der wir die HÃ¤ufigkeiten fï¿½r diese Stopwerte
+		// Es gibt die folgenden MÃ¶glichkeiten, an denen ein Zyklus stoppt:
 		// 0, 0
 		// 10, 10
 		// 50, 50
 		// 60, 60
 		// 24, 57, 24,57
-		// Die Stopwerte für jeden Startwert stehen im Feld stopValue.
-		// stopFrequency[0] gehört zu 0, 1 zu 10, 2 zu 50,
+		// Die Stopwerte fï¿½r jeden Startwert stehen im Feld stopValue.
+		// stopFrequency[0] gehÃ¶rt zu 0, 1 zu 10, 2 zu 50,
 		// der Index 3 zu 60, 60, 
 		// der Index 4 zu 24, 57.
 		int[] stopFrequency = new int[5];
@@ -83,13 +83,13 @@ public class VonNeumannMain
 			}
 		}
 		// Ergebnisse ausgeben
-		System.out.println("Untersuchung der Mid-Square Methode für zweistellige Dezimalstellen");
-		System.out.println("Die Folge mit dem längstem Zyklus hat den Startwert "+ max + " und die Zykluslänge " + cycles[max]+ ".");
+		System.out.println("Untersuchung der Mid-Square Methode fÃ¼r zweistellige Dezimalstellen");
+		System.out.println("Die Folge mit dem lÃ¤ngstem Zyklus hat den Startwert "+ max + " und die ZykluslÃ¤nge " + cycles[max]+ ".");
 		System.out.print("\nDieser Zyklus lautet: ");
 		for (i=0; i<cycles[max]; i++)
 			System.out.print(sequences[max][i]+ " ");
 		System.out.println("\n");
-		System.out.println("Die einzelnen Stopwerte wurden mit den folgenden absoluten Häufigkeiten erreicht:");
+		System.out.println("Die einzelnen Stopwerte wurden mit den folgenden absoluten HÃ¤ufigkeiten erreicht:");
 		System.out.println("0, 0 wurde " + stopFrequency[0] + "-mal erreicht");
 		System.out.println("10, 10 wurde " + stopFrequency[1] + "-mal erreicht");
 		System.out.println("50, 50 wurde " + stopFrequency[2] + "-mal erreicht");

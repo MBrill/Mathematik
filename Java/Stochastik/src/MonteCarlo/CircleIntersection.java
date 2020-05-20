@@ -1,6 +1,6 @@
 /**
- * Monte-Carlo Methode zur Bestimmung der Fläche des Durchschnitts
- * von zwei Kreisen
+ * Monte-Carlo Methode zur Bestimmung der Fläche 
+ * des Durchschnitts von zwei Kreisen
  */
 public class CircleIntersection {
 
@@ -25,7 +25,7 @@ public class CircleIntersection {
 		
 		System.out.println("Das Ergebnis unseres Monte-Carlo Experiments");	
 		System.out.println("--------------------------------------------");
-		System.out.println("Die Schätzung für unsere Fl�che: " + hK);
+		System.out.println("Die Schätzung für unsere Fläche: " + hK);
 	
 	}
 	

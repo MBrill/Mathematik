@@ -2,8 +2,8 @@ import org.apache.commons.math3.random.RandomDataGenerator;
 import org.apache.commons.math3.random.MersenneTwister;
 
 /**
- * Erstes Beispiel für den Einsatz einer Instanz eines Mersenne-Twisters aus
- * der Apache Commons Math.
+ * Erstes Beispiel fÃ¼r den Einsatz einer Instanz 
+ines Mersenne-Twisters aus der Apache Commons Math.
  */
 public class FirstMersenneTwister {
 
@@ -17,10 +17,10 @@ public class FirstMersenneTwister {
 		System.out.println("-------------------------------------------------------------");
 		// Eine Zufallszahl ...
 		double val = generator.nextUniform(0.0,  1.0);
-		System.out.println("Eine Zufallszahl im Einheitsintervall " + val);
+		System.out.println("Eine Zufallszahl im Einheitsintervall: " + val + "\n");
 		
 		// 10 zufÃ¤llige WÃ¼rfelergebnisse ...
-		System.out.println("Wir erzeugen 10 zufällige Würfelergebnisse!");		
+		System.out.println("Wir erzeugen 10 zufÃ¤llige WÃ¼rfelergebnisse:");		
 		for (int i=0; i<10; i++) {
 			System.out.print(generator.nextInt(1, 6) + " ");
 		}

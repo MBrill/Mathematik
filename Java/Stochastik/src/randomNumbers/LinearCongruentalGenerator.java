@@ -1,8 +1,8 @@
 /**
- * Realisierung eines linearen Kongruenz-Generators für
+ * Realisierung eines linearen Kongruenz-Generators fÃ¼r
  * die Erzeugung von Pseudo-Zufallszahlen.
  *
- *  <P>Ein lineare Kongruenz-Generator benötigt:</P> 
+ *  <P>Ein lineare Kongruenz-Generator benÃ¶tigt:</P> 
  *  <P>einen Modul m</P>
  *  <P>einen Multiplikator a</P>
  *  <P>ein Inkrement c, und</P> 
@@ -45,7 +45,7 @@ public class LinearCongruentalGenerator {
 	}
 	
 	/**
-	 * Konstruktor mit einem Startwert, alle anderen Größen werden wie der 
+	 * Konstruktor mit einem Startwert, alle anderen Grï¿½ï¿½en werden wie der 
 	 * Defaultkonstruktor besetzt
 	 *
      * @param x00 Startwert
@@ -72,14 +72,14 @@ public class LinearCongruentalGenerator {
 	public long getSeed() { return x0; }
 	
 	/** 
-	 * Den Modul abfragen (die größte Zahl die produziert werden kann ist m-1) 
+	 * Den Modul abfragen (die grÃ¶ï¿½te Zahl die produziert werden kann ist m-1) 
 	 * 
 	 * @return Die Zahl abfragen, die als Modul verwendet wird
 	 */
 	public long getModulus() { return m; }
 	
 	/** 
-	 * Nächste Zufallszahl abfragen
+	 * NÃ¤chste Zufallszahl abfragen
 	 * 
 	 * @return eine weitere Zufallszahl
 	 */
@@ -89,7 +89,7 @@ public class LinearCongruentalGenerator {
 	}
 	
 	/** 
-	 * Nächste double-Zufallszahl im Intervall [0, 1) abfragen 
+	 * NÃ¤chste double-Zufallszahl im Intervall [0, 1) abfragen 
 	 * 
 	 * @return eine weitere Zufallszahl, als Zahl im Einheitsintervall
 	 */
@@ -106,6 +106,6 @@ public class LinearCongruentalGenerator {
     private long c;
     /** Startwert (seed) */
     private long x0;
-    /** Wert für die Berechnung */
+    /** Wert fï¿½r die Berechnung */
     private long value;
 }
