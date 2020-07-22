@@ -58,7 +58,7 @@ public class LottozahlenErwartung {
 	    double computed = (double)statistik[number-1]/(double)max;
 	    
 	    System.out.println("Die absolute Häufigkeit für die Zahl " + number + " ist " + statistik[number-1]);
-	    System.out.println("Die erwartete absolute Häufigkeit f�r die Zahl " + number + " ist " + erwartetFrequ);	    
+	    System.out.println("Die erwartete absolute Häufigkeit für die Zahl " + number + " ist " + erwartetFrequ);	    
 	    System.out.println("Der durch die Simulation geschätzte Wert für die Wahrscheinlichkeit ist " + computed);
 	    System.out.println("Der erwartete Wert für die Wahrscheinlichkeit ist " + erwartet);
 	    double relError = Math.abs(computed-erwartet)/erwartet;
