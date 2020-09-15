@@ -1,12 +1,12 @@
-""" Ausgabe unseres ersten Beispiels aus der Vorlesung
-"""
+"""Ausgabe unseres ersten Beispiels aus der Vorlesung."""
 import matplotlib.pyplot as plt
 import numpy as np
 import curves
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
- 
+
+
 # Parameterintervall digitalisieren
 # Wie viele Samples?
 n = 200
