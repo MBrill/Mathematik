@@ -9,11 +9,13 @@ import numpy as np
 fig = plt.figure()
 ax = fig.add_subplot(111)
 
-"""Erstes Kurvenbeispiel aus der Vorlesung"""
-def first_example(t) :
+
+def first_example(t):
+    """Erstes Kurvenbeispiel aus der Vorlesung"""
     x = t*t-2.0*t
     y = t + 1.0
     return x, y
+
 
 # Parameterintervall digitalisieren
 # Wie viele Samples?
