@@ -1,37 +1,75 @@
 """
    Planare Parameterkurven.
 
-   Die Return-Werte werden als Tupel erzeugt.
-
-   Beispiel:
-   x, y = cycloid(1.0, 90.0)
 """
 import numpy as np
 
 
 # Ebene Parameterkurven
-def cycloid(radius, theta):
-    """Zykloide """
+def cycloid(radius=1.0, theta=0.0):
+    """
+    Zykloide
+
+    Parameters
+    ----------
+    radius : float
+        Radius des abrollenden Rad, default ist 1.0.
+    theta : float
+        Parameter der Kurve, Default ist 0.0.
+
+    Returns
+    -------
+    x : float
+        x-Koordinate der Kurve für theta
+    y : float
+        y-Koordinate der Kurve für theta.
+
+    """
     x = radius*(theta - np.sin(theta))
     y = radius*(1.0 - np.cos(theta))
     return x, y
 
 
-def cycloidVelocity(radius, theta):
+def cycloidVelocity(radius=1.0, theta=0.0):
     """
-    Zykloide erste Ableitung
-    Wir werden mittelfristig die Kurven
-    als Klassen implementieren, dann wird
-    diese Funktion und die oben zu einer
-    Funktion der Klasse.
+    Geschwindigkeit der Zykloide
+
+    Parameters
+    ----------
+    raius : float
+            Radius der Zykloide.
+    theta : float
+            Parameter.
+
+    Returns
+    -------
+    x : float
+        x-Wert des Punkts zum Parameter t.
+    y : float
+        yx-Wert des Punkts zum Parameter t.
+
     """
     x = radius*(1.0-np.cos(theta))
     y = radius*np.sin(theta)
     return x, y
 
 
-def first_example(t):
-    """Erstes Kurvenbeispiel aus der Vorlesung"""
+def first_example(t: float):
+    """
+    Erstes Kurvenbeispiel aus der Vorlesung, vgl. Folien.
+
+    Parameters
+    ----------
+    t : float
+        Parameter.
+
+    Returns
+    -------
+    x : float
+        x-Wert des Punkts zum Parameter t.
+    y : float
+        y-Wert des Punkts zum Parameter t.
+    """
     x = t*t-2.0*t
     y = t + 1.0
     return x, y
@@ -138,3 +176,28 @@ def arcLengthFunction(curve, a=0.0, b=1.0, n=100):
         sct[i+1] = sum
 
     return t, sct
+
+
+def main():
+    """
+    Funktionen für die Behandlung von Parameterkurven.
+    Neben den Parameterdarstellungen sind auch Implementierungen
+    für die Berechnung der Bogenlänge oder der Bogenlängenfunktion
+    implementiert.
+
+
+    Beispiel:
+    x, y = cycloid(1.0, 90.0)
+
+    Returns
+    -------
+    None.
+    """
+    print('Ebene Parameterkurven')
+    print('Beispiel: Punkt auf der Zykloide für r = 1 und theta = 0')
+    print(cycloid())
+
+
+if __name__ == "__main__":
+    main()
+    

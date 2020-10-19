@@ -5,16 +5,10 @@ von Punkten auf einer Parameterkurve.
 """
 import matplotlib.pyplot as plt
 import numpy as np
+import curves
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
-
-
-def first_example(t):
-    """Erstes Kurvenbeispiel aus der Vorlesung"""
-    x = t*t-2.0*t
-    y = t + 1.0
-    return x, y
 
 
 # Parameterintervall digitalisieren
@@ -25,14 +19,11 @@ tmax = 6.0
 t = np.linspace(tmin, tmax, n)
 
 # x und y-Koordinaten der Kurve berechnen
-x, y = first_example(t)
+x, y = curves.first_example(t)
 
-style = 'seaborn'
-plt.style.use(style)
-ax.set_title('Punkte auf unserer Kurve'.format(style), color='C0')
-
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-plt.plot(x, y, linestyle='None', marker='o', markersize=10.0, color='g')
+plt.plot(x, y, 'go', markersize=10.0)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Punkte auf unserer Kurve')
 
 plt.show()
