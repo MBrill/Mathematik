@@ -1,17 +1,17 @@
 /**
- * Basisklasse für Monte-Carlo Methoden zur Bestimmung von Nachkommastellen der irrationalen Zahl pi.
+ * Basisklasse f�r Monte-Carlo Methoden zur Bestimmung von Nachkommastellen der irrationalen Zahl pi.
  */
 abstract public class MCPiAbstract 
 {
 	public MCPiAbstract() {}
 	
 	/**
-	 * Durchführung des Monte-Carlo Experiments
+	 * Durchf�hrung des Monte-Carlo Experiments
 	 * 
 	 * @param generator Instanz eines Zufallszahlengenerators
 	 * @param k Anzahl der Punkte, die im Einheitsquadrat erzeugt werden sollen
 	 * 
-	 * @return Relative Häufigkeit der Treffer im Einheitskreis
+	 * @return Relative H�ufigkeit der Treffer im Einheitskreis
 	 */
 	protected static int experiment(java.util.Random generator, int k)
 	{
@@ -53,7 +53,7 @@ abstract public class MCPiAbstract
 		System.out.println("\nDas Ergebnis unseres Monte-Carlo Experiments");	
 		System.out.println("--------------------------------------------");
 		System.out.println("Die relative Häufigkeit der Treffer im Einheitskreis: " + hK);
-		System.out.println("Unsere Schützung für pi: " + p);
+		System.out.println("Unsere Schätzung für pi: " + p);
 		System.out.println("Der absolute Fehler zwischen Pi und unserer Schätzung: " + delta);
     }
     

@@ -10,7 +10,7 @@ import org.apache.commons.math3.random.RandomDataGenerator;
  * Wahrscheinclichkeit von 1/6 fï¿½r die nicht-blinde Seite.
  * 
  * In einem Spiel werden insgesamt 6 solcher blinder Wï¿½rfel verwendet, jeweils
- * mit einer der mï¿½glichen Augenzahlen.
+ * mit einer der möglichen Augenzahlen.
  */
 public class BlindDice {
 
@@ -33,7 +33,7 @@ public class BlindDice {
 
 	/** Konstruktor mit einer Augenzahl
 	 *  
-	 *  Ein blinder Wï¿½rfel mit n als Augenzahl. 
+	 *  Ein blinder Würfel mit n als Augenzahl. 
 	 *  
 	 *  Die Wahrscheinlichkeit, die nicht-blinde Seite zu wï¿½rfeln
 	 *  ist 1/6.
@@ -43,7 +43,7 @@ public class BlindDice {
 	/**
 	 * Abfragen, mit Welcher Wahrscheinlichkeit ein Auge zurï¿½ckgeliefert wird
 	 * 
-	 * @return Wahrscheinlichkeit fï¿½r die Erzeugung des nicht-blinden Auges
+	 * @return Wahrscheinlichkeit für die Erzeugung des nicht-blinden Auges
 	 */
 	public double getP()
 	{

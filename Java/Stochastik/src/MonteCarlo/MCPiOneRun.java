@@ -13,7 +13,7 @@ public class MCPiOneRun extends MCPiAbstract
 		int k = 100000000;
 		double hK, p;
 		
-		System.out.println("Ann√§herung an pi mit Hilfe einer Monte-Carlo Simulation");		
+		System.out.println("Ann‰herung an pi mit Hilfe einer Monte-Carlo Simulation");		
 		System.out.println("Wir beginnnen mit der Simulation!");
 		System.out.println("Wir werfen " + k + "-mal!");
 		System.out.println("Sobald die Simulation beendet ist erfolgt wieder eine Ausgabe auf der Konsole!");

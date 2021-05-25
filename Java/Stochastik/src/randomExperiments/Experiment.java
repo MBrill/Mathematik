@@ -2,9 +2,9 @@ import org.apache.commons.math3.random.RandomDataGenerator;
 import org.apache.commons.math3.random.MersenneTwister;
 
 /**
- * Experiment zweimal WÃ¼rfeln und Augensumme berechnen.
+ * Experiment zweimal WÃürfeln und Augensumme berechnen.
  * 
- * Das Experiment wird zweimal ausgefÃ¼hrt. Einmal mit einer Instanz von
+ * Das Experiment wird zweimal ausgeführt. Einmal mit einer Instanz von
  * LinearCongruentalGenerator, und einmal mit einer Instanz eines MersenneTwisters
  * aus der Apache Common Math API.
  */
@@ -25,16 +25,16 @@ public class Experiment
 		 * Dabei ist die Augensumme 2 in ergebnis[0],
 		 * die Summe 3 in ergebnis[1] und allgemein
 		 * die Summe k in ergebnis[k-2].
-		 * Insgesamt benï¿½tigen wir 11 Feldelemente 
+		 * Insgesamt benötigen wir 11 Feldelemente 
 		 */
 		int[] ergebnis = new int[11];
-		// Wie oft mï¿½chten wir wï¿½rfeln?
+		// Wie oft möchten wir würfeln?
 		final int n=100000;
-		// Variable fï¿½r Berechnungen
+		// Variable für Berechnungen
 		int value, i, summe;
 		
-		System.out.println("Wir simulieren " + n + " WÃ¼rfe mit Hilfe des Lehner-Generators!");
-		// 1. WÃ¼rfeln mit dem linearen Kongruenz-Generator
+		System.out.println("Wir simulieren " + n + " Würfe mit Hilfe des Lehner-Generators!");
+		// 1. Würfeln mit dem linearen Kongruenz-Generator
 		for (i=0; i<n; i++) {
 			value = experiment1.throwDies();
 			ergebnis[value-2]++;
@@ -42,14 +42,14 @@ public class Experiment
 			
 		// Check, ob die Ergebnisse plausibel sind
 		// Die Summe der HÃ¤ufigkeiten muss mit der Variable n,
-		// der Anzahl der DurchfÃ¼hrungen,ï¿½bereinstimmen.
+		// der Anzahl der Durchführungen,übereinstimmen.
 		summe = 0;
 		for (i=0; i<11; i++)
 			summe += ergebnis[i];
 		
 		if (summe != n) {
 			System.out.println("Inkonsistentes Ergebnis bei der Simulation mit dem Lehmer-Generator!");
-			System.out.println("Die Summe der HÃ¤ufigkeiten stimmt nicht mit n Ã¼berein!");
+			System.out.println("Die Summe der Häufigkeiten stimmt nicht mit n überein!");
 		}
 			
 		// Die Ergebnisse ausgeben
@@ -62,7 +62,7 @@ public class Experiment
 		// HÃ¤ufigkeiten zurï¿½cksetzen
 		for (i=0; i<11; i++) 
 			ergebnis[i] = 0;
-		System.out.println("Wir simulieren " + n + " WÃ¼rfe mit Hilfe eines Mersenne-Twisters!");
+		System.out.println("Wir simulieren " + n + " Würfe mit Hilfe eines Mersenne-Twisters!");
 		for (i=0; i<n; i++) {
 			value = experiment2.throwDies();
 			ergebnis[value-2]++;
