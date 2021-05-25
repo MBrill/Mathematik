@@ -24,7 +24,6 @@ public class Euler {
 
    private static final String FileInputName = "Euler.in";
    private static final String FileOutputName = "Euler.out";
-   private static int n;
 
    public static void main(String[] args) throws IOException
    {

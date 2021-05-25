@@ -30,7 +30,7 @@ public class LottozahlenErwartung {
 		
 		System.out.println("Simulation von Lotto 6 aus 49");
 		System.out.println("Zufallszahlengenerator: Well44497a aus der Apache Commons Math");
-		System.out.println("Für welche Zahl möchten sie nach der Simulation die Häufigkeiten wissen?");
+		System.out.println("Für welche Zahl m�chten sie nach der Simulation die H�ufigkeiten wissen?");
 		System.out.println("Geben Sie bitte eine Zahl zwischen 1 und 49 ein!");
 		System.out.println("Ungültige Eingaben führen zur Verwendung der interessantesten Zahl - 42");
 		number = in.nextInt();

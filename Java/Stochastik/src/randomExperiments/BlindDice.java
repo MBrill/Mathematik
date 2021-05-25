@@ -1,7 +1,7 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
 
 /**
- * Realisierung eines blinden Wï¿½rfels nach Haller unr Barth
+ * Realisierung eines blinden Wï¿½rfels nach Haller und Barth
  * 
  * Ein blinder Wï¿½rfel ist ein Wï¿½rfel, der fï¿½nf leere, blinde, Seiten hat.
  * Auf einer Seite steht ein Auge, entweder eine 1, eine 2 bis zu einer 6.
@@ -10,7 +10,7 @@ import org.apache.commons.math3.random.RandomDataGenerator;
  * Wahrscheinclichkeit von 1/6 fï¿½r die nicht-blinde Seite.
  * 
  * In einem Spiel werden insgesamt 6 solcher blinder Wï¿½rfel verwendet, jeweils
- * mit einer der mï¿½glichen Augenzahlen.
+ * mit einer der möglichen Augenzahlen.
  */
 public class BlindDice {
 
@@ -33,7 +33,7 @@ public class BlindDice {
 
 	/** Konstruktor mit einer Augenzahl
 	 *  
-	 *  Ein blinder Wï¿½rfel mit n als Augenzahl. 
+	 *  Ein blinder Würfel mit n als Augenzahl. 
 	 *  
 	 *  Die Wahrscheinlichkeit, die nicht-blinde Seite zu wï¿½rfeln
 	 *  ist 1/6.
@@ -43,7 +43,7 @@ public class BlindDice {
 	/**
 	 * Abfragen, mit Welcher Wahrscheinlichkeit ein Auge zurï¿½ckgeliefert wird
 	 * 
-	 * @return Wahrscheinlichkeit fï¿½r die Erzeugung des nicht-blinden Auges
+	 * @return Wahrscheinlichkeit für die Erzeugung des nicht-blinden Auges
 	 */
 	public double getP()
 	{

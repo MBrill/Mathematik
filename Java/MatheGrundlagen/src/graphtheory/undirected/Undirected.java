@@ -9,7 +9,7 @@ import java.io.*;
  * @author Manfred Brill
  * 
  * Read in the adjacency matrix of a undirected graph
- * and compute a number of numbers and atttribues for
+ * and compute numbers and atttribues for
  * this graph.
  *
  * The input file "Undirected.in":
@@ -29,7 +29,6 @@ public class Undirected {
 
    private static final String FileInputName = "Undirected.in";
    private static final String FileOutputName = "Undirected.out";
-   private static int n;
 
    public static void main(String[] args) throws IOException
    {

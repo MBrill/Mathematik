@@ -1,7 +1,7 @@
 /**
  * Monte-Carlo Methode zur Bestimmung von Nachkommastellen der irrationalen Zahl pi.
  * 
- * Wir fÃ¼hren das Experiment mit k-Punkten durch,
+ * Wir führen das Experiment mit k-Punkten durch,
  * machen das insgesamt n-mal und bilden den Mittelwert.
  */
 public class MCPiMeans extends MCPiAbstract 
@@ -16,7 +16,7 @@ public class MCPiMeans extends MCPiAbstract
 		System.out.println("AnnÃ¤herung an pi mit Hilfe einer Monte-Carlo Simulation");		
 		System.out.println("Wir beginnnen mit der Simulation!");
 		System.out.println("Wir werfen jeweils " + k + "-mal!");
-		System.out.println("Wir fÃ¼hren insgesamt " + n + "-mal dieses Experiment durch und berechnen das arithmetische Mittel");
+		System.out.println("Wir führen insgesamt " + n + "-mal dieses Experiment durch und berechnen das arithmetische Mittel");
 		System.out.println("Sobald die Simulation beendet ist erfolgt wieder eine Ausgabe auf der Konsole!");
 		System.out.println("Bitte etwas Geduld!");
 		
