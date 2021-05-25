@@ -1,7 +1,7 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
 
 /**
- * Realisierung eines blinden W�rfels nach Haller unr Barth
+ * Realisierung eines blinden W�rfels nach Haller und Barth
  * 
  * Ein blinder W�rfel ist ein W�rfel, der f�nf leere, blinde, Seiten hat.
  * Auf einer Seite steht ein Auge, entweder eine 1, eine 2 bis zu einer 6.
