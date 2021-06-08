@@ -1,26 +1,55 @@
 import org.apache.commons.math3.random.RandomDataGenerator;
-import org.apache.commons.math3.random.Well44497a;
+import java.util.*;
 
 /**
- * Simulation Lotto 6 aus 49 mit Hilfe der Commons Math Klassen
+ * Simulation einer Lotto-Ziehung für Lotto 6 aus 49.
  */
-public class Lotto6aus49 {
-	public static void main(String[] args) {
-		// Einen Well-Generator erzeugen
-		Well44497a well = new Well44497a();
-		// Eine Instanz von RandomDataGenerator mit der Well-Klasse erzeugen
-		RandomDataGenerator generator = new RandomDataGenerator(well);
-		
-		int n=49, m = 6;
-		System.out.println("Lotto 6 aus 49 mit Pseudo-Zufallszahlen");
-		System.out.println("Zufallszahlengenerator: Well44497a aus der Apache Commons Math");
-		
-		// Wir ziehen 6 mal und simulieren eine Lotto-Ziehung
-		int[] ziehung = new int[6];
-		System.out.println("\nUnsere 6 Lottozahlen");
-		ziehung = generator.nextPermutation(n, m);
-		for (int i=0; i<m; i++) {
-			System.out.println((ziehung[i]+1));			
-		}
+public class Lotto6aus49 
+{
+	/** 
+	 * Default-Konstruktor ohne Zufallszahlengenerator
+	 */
+	public Lotto6aus49() 
+	{	
+		m = 49;
+		n = 6;
 	}
+	
+	/** 
+	 * Konstruktor mit einer Instanz eines Zufallszahlen-Generators
+	 */
+	public Lotto6aus49(RandomDataGenerator gen) 
+	{	
+		m = 49;
+		n = 6;
+		generator = gen;
+	}
+	
+	/** 
+	 * Die Ziehung durchführen
+	 * 	  
+	 * @return Wappen (=0) oder Zahl (=1)
+	 */
+	public Vector<Integer> draw() 
+	{
+		int[] ziehung = new int[n];
+		ziehung = generator.nextPermutation(m, n);
+		Vector<Integer> draw = new Vector<Integer>(6);
+		for (int i = 0; i < n; i++)
+			draw.add(ziehung[i]+1);
+		return draw;
+	}
+	
+	/** 
+	 * Instanz des Generators 
+	 */
+	private RandomDataGenerator generator;	
+	/**
+	 * Wie viele Kugeln haben wir in der Trommel?
+	 */
+	int m;
+	/**
+	 * Wie viele Kugeln ziehen wir?
+	 */
+	int n;
 }
